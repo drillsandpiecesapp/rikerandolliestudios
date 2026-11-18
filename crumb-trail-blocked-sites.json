@@ -1,0 +1,5 @@
+{
+  "note": "Recipe sites whose owners asked that their recipes not be saved in Crumb Trail Manager. The app checks this list about once a day. Add a bare domain, like \"example.com\"; it also covers www. and other subdomains.",
+  "updated": "2026-11-16",
+  "domains": []
+}
