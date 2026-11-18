@@ -1,10 +1,6 @@
-:root{--surface:rgba(255,255,255,.09);--ink:#FFFFFF;--muted:#E3D8FF;--brand:#C4B5FD;--on:#1A0A44;--soft:rgba(255,255,255,.16);--line:rgba(255,255,255,.28);--focus:#FFFFFF;--glass-blur:blur(16px) saturate(140%)}
 *{box-sizing:border-box}
 body{margin:0;color:var(--ink);font:17px/1.65 "Segoe UI Variable Text","Segoe UI","Helvetica Neue",Roboto,system-ui,sans-serif;
- background:
-  radial-gradient(900px 600px at 100% 38%,rgba(232,121,249,.20),transparent 70%),
-  radial-gradient(800px 600px at 0% 78%,rgba(56,189,248,.14),transparent 70%),
-  linear-gradient(180deg,#1A0A44 0%,#21104f 45%,#2a1264 100%);
+ background:var(--bg-grad);
  background-attachment:fixed;min-height:100vh}
 a{color:var(--brand)}
 a:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
@@ -18,9 +14,9 @@ h2{margin:0 0 12px;font-size:1.45rem;letter-spacing:-.01em}
 p{margin:0 0 14px}
 .tag{margin:20px 0 0;font-size:1.2rem}
 .cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin-top:22px}
-.btn{display:inline-block;box-sizing:border-box;border:1.5px solid transparent;line-height:1.6;padding:1px 12px;font-size:.8rem;border-radius:999px;font-weight:700;text-decoration:none;background:linear-gradient(90deg,#DDD2FF,#F7C3FF);color:#1A0A44;box-shadow:0 6px 18px rgba(20,5,60,.35)}
+.btn{display:inline-block;box-sizing:border-box;border:1.5px solid transparent;line-height:1.6;padding:1px 12px;font-size:.8rem;border-radius:999px;font-weight:700;text-decoration:none;background:var(--btn-bg);color:var(--btn-ink);box-shadow:var(--btn-shadow)}
 .btn:hover{filter:brightness(1.08)}
-.btn.alt{background:transparent;color:#fff;border-color:rgba(255,255,255,.65);box-shadow:none}
+.btn.alt{background:transparent;color:var(--alt-ink);border-color:var(--alt-line);box-shadow:none}
 .fine{color:var(--muted);font-size:.92rem;margin:12px 0 0}
 section{padding:32px 0;border-top:1px solid var(--line)}
 .app{display:flex;gap:20px;align-items:flex-start;padding:30px 0;border-top:1px solid var(--line)}
@@ -29,16 +25,16 @@ ul.feat{margin:0;padding-left:1.2em}
 ul.feat li{margin:6px 0}
 .shots{display:flex;gap:14px;overflow-x:auto;padding-bottom:10px}
 .shots figure{margin:0;flex:none;width:210px}
-.shots img{width:100%;height:auto;border-radius:16px;border:1.5px solid var(--line);display:block;box-shadow:0 14px 34px rgba(10,0,40,.4)}
+.shots img{width:100%;height:auto;border-radius:16px;border:1.5px solid var(--line);display:block;box-shadow:0 14px 34px var(--fx)}
 .shots figcaption{font-size:.88rem;color:var(--muted);margin-top:6px}
 ol.steps{margin:0;padding:0;list-style:none;counter-reset:s}
 ol.steps li{counter-increment:s;position:relative;padding:0 0 16px 48px}
 ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--soft);display:grid;place-items:center;font-weight:700;font-size:.95rem}
 .note{background:var(--surface);border:1.5px solid var(--line);border-radius:18px;padding:16px 18px}
 /* Glass effect for every panel on the app and privacy pages */
-.card,.note{-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);box-shadow:0 20px 50px rgba(10,0,40,.35),inset 0 1.5px 0 rgba(255,255,255,.35)}
+.card,.note{-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);box-shadow:var(--card-shadow)}
 .card{border-width:1.5px}
-.priv span,.chips span{border:1px solid rgba(255,255,255,.18)}
-.brand img,.app img{border:2px solid rgba(255,255,255,.5)}
+.priv span,.chips span{border:1px solid var(--line)}
+.brand img,.app img{border:2px solid var(--img-line)}
 footer{padding:30px 0 56px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}
 @media(max-width:480px){.app{flex-direction:column}}
