@@ -33,10 +33,14 @@ body.studio{margin:0;color:var(--ink);font:17px/1.65 "Segoe UI Variable Text","S
 .studio .btn.alt{color:#fff}
 .btn.small{padding:9px 18px;font-size:.95rem}
 .btn.alt.small{padding:7px 16px}
-.hero-dogs{align-self:end;justify-self:end;width:100%;max-width:600px;display:flex;align-items:flex-end;margin-bottom:-6px}
+.hero-dogs{align-self:end;justify-self:end;width:100%;max-width:600px;display:flex;align-items:flex-end;margin-bottom:0;padding-bottom:14px}
+.pet{margin:0;display:flex;flex-direction:column;align-items:center;position:relative}
+.pet.ollie{width:54%;margin-right:-8%;z-index:0}
+.pet.riker{width:44%;margin-bottom:34px;z-index:1}
+.pet figcaption{margin-top:-4px;font-weight:800;font-size:clamp(1.05rem,2.2vw,1.35rem);letter-spacing:.02em;color:#fff;text-shadow:0 3px 14px rgba(30,5,90,.7)}
 .hero-dog,.hero-ollie{height:auto;filter:drop-shadow(0 28px 32px rgba(10,0,35,.6))}
-.hero-ollie{width:54%;position:relative;z-index:0;margin-right:-8%;-webkit-mask-image:linear-gradient(to top,transparent 0,#000 14%);mask-image:linear-gradient(to top,transparent 0,#000 14%)}
-.hero-dog{width:54%;position:relative;z-index:1;-webkit-mask-image:linear-gradient(to top,transparent 0,#000 14%),linear-gradient(to right,transparent 0,#000 10%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to top,transparent 0,#000 14%),linear-gradient(to right,transparent 0,#000 10%);mask-composite:intersect}
+.hero-ollie{width:100%;-webkit-mask-image:linear-gradient(to top,transparent 0,#000 14%);mask-image:linear-gradient(to top,transparent 0,#000 14%)}
+.hero-dog{width:100%;-webkit-mask-image:linear-gradient(to top,transparent 0,#000 14%),linear-gradient(to right,transparent 0,#000 10%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to top,transparent 0,#000 14%),linear-gradient(to right,transparent 0,#000 10%);mask-composite:intersect}
 
 /* Sections */
 section{padding:64px 0 8px}
