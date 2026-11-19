@@ -96,7 +96,9 @@
   <ul>
     <li>Should you need to contact me, your information will never be shared unless required by law.</li>
   </ul>
-  <p><a href="about-and-custom-apps.html">AI &amp; custom apps</a></p>
+  <div class="foot-btns">
+  <a class="btn alt small" href="about-and-custom-apps.html">AI &amp; custom apps</a>
+  <button class="btn alt small" type="button" id="contactBtn">Contact us</button>
   <details class="links">
     <summary>Privacy policies</summary>
     <nav aria-label="Privacy policies">
@@ -107,7 +109,53 @@
       <a href="crumb-trail-privacy.html">Crumb Trail Manager Privacy Policy</a>
     </nav>
   </details>
+  </div>
   <p>© 2026 Riker &amp; Ollie Studios LLC. Page last updated November 18, 2026.</p>
 </div></footer>
+
+<dialog class="contact" id="contactDlg" aria-labelledby="ctitle">
+  <button class="x" type="button" id="contactX" aria-label="Close contact form">&times;</button>
+  <h2 id="ctitle">Contact us</h2>
+  <p class="fine">Send me a note. Your message is emailed to me through Web3Forms, a form delivery service that handles it under its own privacy policy. This site doesn&rsquo;t store anything you type.</p>
+  <form id="contactForm">
+    <div class="f"><label for="cname">Your name</label><input type="text" id="cname" required autocomplete="name"></div>
+    <div class="f"><label for="cemail">Your email</label><input type="email" id="cemail" required autocomplete="email"></div>
+    <div class="f"><label for="ctopic">What&rsquo;s this about?</label><select id="ctopic"><option>Question about an app</option><option>Feedback or bug report</option><option>Becoming a tester</option><option>Custom app / contract work</option><option>Something else</option></select></div>
+    <div class="f"><label for="cmessage">Message</label><textarea id="cmessage" required></textarea></div>
+    <input type="checkbox" id="chp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+    <div class="row"><button class="btn small" type="submit">Send message</button><button class="btn alt small" type="button" id="contactCancel">Cancel</button></div>
+    <div id="cmsg" hidden><p class="fine" id="cmsgtxt"></p><textarea id="cout" readonly aria-label="Your message as text"></textarea></div>
+  </form>
+</dialog>
+<script>
+(function(){
+  var d=document.getElementById("contactDlg"),f=document.getElementById("contactForm"),btn=document.getElementById("contactBtn");
+  if(!d||!btn)return;
+  var box=document.getElementById("cmsg"),t=document.getElementById("cmsgtxt"),o=document.getElementById("cout");
+  function close(){if(d.close)d.close();else d.removeAttribute("open");}
+  btn.addEventListener("click",function(){box.hidden=true;if(d.showModal)d.showModal();else d.setAttribute("open","");document.getElementById("cname").focus();});
+  document.getElementById("contactX").addEventListener("click",close);
+  document.getElementById("contactCancel").addEventListener("click",close);
+  d.addEventListener("click",function(e){if(e.target===d)close();});
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    var n=document.getElementById("cname").value.trim(),em=document.getElementById("cemail").value.trim(),tp=document.getElementById("ctopic").value,m=document.getElementById("cmessage").value.trim();
+    var body="Name: "+n+"\n"+"Email: "+em+"\n"+"Topic: "+tp+"\n\n"+m;
+    var go=f.querySelector('button[type="submit"]'),hp=document.getElementById("chp");
+    function fallback(){
+      window.location.href="mailto:melissa@rikerandolliestudios.com?subject="+encodeURIComponent("Website contact: "+tp)+"&body="+encodeURIComponent(body);
+      o.value=body;o.hidden=false;box.hidden=false;
+      t.textContent="If your email app didn’t open, copy this text and email it to melissa@rikerandolliestudios.com.";
+    }
+    go.disabled=true;
+    window.rosSend("Website contact: "+tp,n,em,body,hp&&hp.checked).then(function(){
+      o.hidden=true;box.hidden=false;t.textContent="Thank you! Your message was sent. I’ll reply by email.";f.reset();
+    },function(err){
+      if(err&&err.message==="nokey"){fallback();}
+      else{o.value=body;o.hidden=false;box.hidden=false;t.textContent="Sorry, your message couldn’t be sent. Please copy it and email melissa@rikerandolliestudios.com.";}
+    }).then(function(){go.disabled=false;});
+  });
+})();
+</script>
 <script src="site.js"></script>
 </body></html>

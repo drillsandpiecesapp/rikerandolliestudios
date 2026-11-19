@@ -51,7 +51,7 @@ button.btn{cursor:pointer;font-family:inherit}
 
 <section><h2>Let’s build your app</h2>
 <p>I’m happy to talk about developing an Android app to your specifications, on contract. It might be a tool for your hobby, a companion for a game, or a small business idea you want to test. Tell me about it using the form below. It takes about ten minutes, and the more you share, the better I can respond with questions, a rough timeline and a quote.</p>
-<div class="note"><strong>How the form works:</strong> when you press the button, your own email app opens with your answers filled in, addressed to <a href="mailto:melissa@rikerandolliestudios.com">melissa@rikerandolliestudios.com</a>. Nothing is sent until you press Send in your email app, and this website does not collect or store your answers. If your email app doesn’t open, you can copy the text and email it yourself.</div></section>
+<div class="note"><strong>How the form works:</strong> when you press the button, your answers are emailed to <a href="mailto:melissa@rikerandolliestudios.com">melissa@rikerandolliestudios.com</a> through Web3Forms, a form delivery service that handles them under its own privacy policy. This website does not store your answers. If sending fails, you can copy the text and email it yourself.</div></section>
 
 <section><h2>Project requirements</h2>
 <form class="req" id="req" autocomplete="on">
@@ -89,7 +89,8 @@ button.btn{cursor:pointer;font-family:inherit}
 <div class="f"><label for="publish">Who will publish the app?</label><select id="publish" name="publish"><option value="">Choose one</option><option>I will, on my own Google Play account</option><option>I’d like help publishing it</option><option>Not sure yet</option></select></div>
 <div class="f"><label for="more">Anything else I should know?</label><textarea id="more" name="more"></textarea></div></fieldset>
 
-<div class="cta" style="margin-top:0"><button class="btn" type="submit">Email my answers to Riker &amp; Ollie Studios</button><button class="btn alt" type="button" id="copy">Copy as text</button></div>
+<input type="checkbox" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+<div class="cta" style="margin-top:0"><button class="btn" type="submit">Send my answers to Riker &amp; Ollie Studios</button><button class="btn alt" type="button" id="copy">Copy as text</button></div>
 <div id="out" aria-live="polite"><p class="fine" id="outmsg" style="margin:0 0 8px"></p><textarea id="outtxt" readonly aria-label="Your answers as text"></textarea></div>
 </form></section>
 
@@ -122,8 +123,18 @@ button.btn{cursor:pointer;font-family:inherit}
   f.addEventListener("submit",function(e){
     e.preventDefault();
     var body=build(),subj="App project: "+(val("pname")||val("name")||"new inquiry");
-    window.location.href="mailto:melissa@rikerandolliestudios.com?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(body);
-    show("If your email app didn’t open, copy this text and email it to melissa@rikerandolliestudios.com.");
+    var go=f.querySelector('button[type="submit"]'),hp=document.getElementById("hp");
+    function fallback(){
+      window.location.href="mailto:melissa@rikerandolliestudios.com?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(body);
+      show("If your email app didn’t open, copy this text and email it to melissa@rikerandolliestudios.com.");
+    }
+    go.disabled=true;
+    window.rosSend(subj,val("name"),val("email"),body,hp&&hp.checked).then(function(){
+      out.style.display="block";msg.textContent="Thank you! Your project details were sent. I’ll reply by email.";txt.style.display="none";f.reset();
+    },function(err){
+      if(err&&err.message==="nokey"){fallback();}
+      else{txt.style.display="";show("Sorry, that couldn’t be sent. Please copy the text below and email it to melissa@rikerandolliestudios.com.");}
+    }).then(function(){go.disabled=false;});
   });
   document.getElementById("copy").addEventListener("click",function(){
     show("");

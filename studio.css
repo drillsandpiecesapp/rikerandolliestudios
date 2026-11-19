@@ -106,3 +106,22 @@ footer.studio-foot a{color:var(--ink)}
 }
 @media(max-width:480px){.card-head img{width:60px;height:60px}.hero{padding-top:36px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Footer button row and Contact dialog */
+.foot-btns{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:14px 0}
+.foot-btns .links{margin:0}
+.foot-btns button.btn{cursor:pointer;font-family:inherit}
+dialog.contact{width:min(520px,92vw);max-height:90vh;overflow:auto;padding:24px;border:1.5px solid var(--line);border-radius:22px;background:var(--panel-bg);color:var(--ink);box-shadow:var(--bar-shadow)}
+dialog.contact::backdrop{background:rgba(10,0,40,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+dialog.contact h2{margin:0 0 6px;font-size:1.4rem}
+dialog.contact .fine{margin:0 0 16px}
+dialog.contact .x{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--alt-line);background:transparent;color:var(--ink);font-size:1.2rem;line-height:1;cursor:pointer}
+dialog.contact .x:focus-visible,dialog.contact input:focus-visible,dialog.contact select:focus-visible,dialog.contact textarea:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+dialog.contact .f{display:grid;gap:6px;margin:0 0 14px}
+dialog.contact label{font-weight:600;font-size:.95rem}
+dialog.contact input,dialog.contact select,dialog.contact textarea{width:100%;box-sizing:border-box;padding:9px 12px;border:1.5px solid var(--alt-line);border-radius:12px;background:var(--surface);color:var(--ink);font:inherit}
+dialog.contact textarea{min-height:120px;resize:vertical}
+dialog.contact .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+dialog.contact button.btn{cursor:pointer;font-family:inherit}
+#cmsg{margin-top:12px}
+#cmsg textarea{min-height:110px}

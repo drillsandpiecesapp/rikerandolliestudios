@@ -63,3 +63,22 @@ window.addEventListener("load", () => {
   window.addEventListener("load", update);
   update();
 })();
+
+// Contact and requirements forms are delivered by Web3Forms (web3forms.com).
+// Paste your Web3Forms access key between the quotes. The key is meant to be public.
+// While it is empty, the forms fall back to opening the visitor's email app.
+const WEB3FORMS_KEY = "";
+window.rosSend = function (subject, name, email, message, honey) {
+  if (!WEB3FORMS_KEY) return Promise.reject(new Error("nokey"));
+  return fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify({
+      access_key: WEB3FORMS_KEY, subject: subject, from_name: name, name: name,
+      email: email, message: message, botcheck: !!honey
+    })
+  }).then(function (r) { return r.json(); }).then(function (j) {
+    if (!j.success) throw new Error(j.message || "failed");
+    return true;
+  });
+};
