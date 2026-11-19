@@ -125,3 +125,9 @@ dialog.contact .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
 dialog.contact button.btn{cursor:pointer;font-family:inherit}
 #cmsg{margin-top:12px}
 #cmsg textarea{min-height:110px}
+
+/* Footer bullets: solid purple stars */
+footer.studio-foot ul{list-style:none;margin:0 0 10px;padding:0}
+footer.studio-foot ul li{position:relative;padding-left:1.5em;margin:0 0 6px}
+footer.studio-foot ul li::before{content:"\2605";position:absolute;left:0;top:.02em;color:#A855F7;font-size:1em;line-height:inherit}
+:root[data-theme="light"] footer.studio-foot ul li::before{color:#7C3AED}
