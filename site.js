@@ -67,7 +67,7 @@ window.addEventListener("load", () => {
 // Contact and requirements forms are delivered by Web3Forms (web3forms.com).
 // Paste your Web3Forms access key between the quotes. The key is meant to be public.
 // While it is empty, the forms fall back to opening the visitor's email app.
-const WEB3FORMS_KEY = "";
+const WEB3FORMS_KEY = "3f164a13-3d92-44b6-a844-2d6c43cabb87";
 window.rosSend = function (subject, name, email, message, honey) {
   if (!WEB3FORMS_KEY) return Promise.reject(new Error("nokey"));
   return fetch("https://api.web3forms.com/submit", {
