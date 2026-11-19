@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How I build apps, and custom app work – Riker &amp; Ollie Studios</title>
+<meta name="description" content="How Riker &amp; Ollie Studios uses AI tools alongside hands-on design and testing to build Android apps, and how to start a conversation about a custom app on contract.">
+<link rel="icon" href="img/favicon.png"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="theme.css"><script src="theme.js"></script>
+<style>
+.wrap{max-width:820px}
+.lede{font-size:1.25rem;max-width:34em;margin:20px 0 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 22px 12px}
+.card h3{margin:0 0 4px;font-size:1.2rem;letter-spacing:-.01em}
+.card ul{margin:0;padding-left:1.15em}
+.card li{margin:0 0 9px}
+.note{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px 20px}
+form.req{display:grid;gap:18px}
+fieldset{border:1px solid var(--line);border-radius:18px;padding:18px 20px 8px;margin:0;background:var(--surface)}
+legend{padding:0 8px;font-weight:700}
+.f{display:grid;gap:6px;margin:0 0 14px}
+.f label,.f .lab{font-weight:600;font-size:.95rem}
+.f small{color:var(--muted);font-weight:400}
+.f input[type=text],.f input[type=email],.f input[type=date],.f select,.f textarea{width:100%;box-sizing:border-box;padding:9px 12px;border:1.5px solid var(--alt-line);border-radius:12px;background:var(--surface);color:var(--ink);font:inherit}
+.f textarea{min-height:96px;resize:vertical}
+.f input:focus-visible,.f select:focus-visible,.f textarea:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.checks{display:flex;flex-wrap:wrap;gap:8px 18px}
+.checks label{font-weight:400;display:flex;gap:6px;align-items:center}
+button.btn{cursor:pointer;font-family:inherit}
+#out{display:none;margin-top:14px}
+#out textarea{width:100%;box-sizing:border-box;min-height:160px;padding:10px;border-radius:12px;border:1.5px solid var(--alt-line);background:var(--surface);color:var(--ink);font:inherit}
+@media(max-width:640px){.grid,.row2{grid-template-columns:1fr}}
+</style></head>
+<body><div class="wrap">
+<header><a class="btn alt" href="./" style="margin-bottom:22px">All apps</a>
+<div class="brand"><h1>How I build apps, and custom app work</h1></div>
+<p class="lede">Every app from Riker &amp; Ollie Studios starts with a real need and one person who cares how it feels to use. AI tools help me build faster, so more of my time goes to design, testing and listening.</p></header>
+
+<section><h2>Building with AI, with a person in charge</h2>
+<p>I use AI tools as a creative and technical partner. They help me write and review code, explore ideas, draft text and create some of the artwork you see on this site and in my apps. Think of it as having a tireless pair of extra hands at the workbench.</p>
+<div class="grid">
+<div class="card"><h3>What AI helps with</h3><ul>
+<li>Writing and reviewing code, so features arrive sooner</li>
+<li>Trying out layouts and ideas before settling on one</li>
+<li>Creating some images and illustrations, including the cartoon portraits of Riker and Ollie</li>
+<li>Checking details such as accessibility, spelling and clear wording</li></ul></div>
+<div class="card"><h3>What stays human</h3><ul>
+<li>Deciding what each app should do, and what it should leave out</li>
+<li>Designing the experience and keeping it simple</li>
+<li>Testing on real phones and fixing what feels wrong</li>
+<li>Privacy choices, and every promise on these pages</li></ul></div></div>
+<p style="margin-top:16px">The result is small, focused apps built by one developer in Oregon, with the speed and polish that used to take a larger team. You can read how each app handles your information in its privacy policy.</p></section>
+
+<section><h2>Let’s build your app</h2>
+<p>I’m happy to talk about developing an Android app to your specifications, on contract. It might be a tool for your hobby, a companion for a game, or a small business idea you want to test. Tell me about it using the form below. It takes about ten minutes, and the more you share, the better I can respond with questions, a rough timeline and a quote.</p>
+<div class="note"><strong>How the form works:</strong> when you press the button, your own email app opens with your answers filled in, addressed to <a href="mailto:melissa@rikerandolliestudios.com">melissa@rikerandolliestudios.com</a>. Nothing is sent until you press Send in your email app, and this website does not collect or store your answers. If your email app doesn’t open, you can copy the text and email it yourself.</div></section>
+
+<section><h2>Project requirements</h2>
+<form class="req" id="req" autocomplete="on">
+<fieldset><legend>About you</legend>
+<div class="row2"><div class="f"><label for="name">Name</label><input type="text" id="name" name="name" required autocomplete="name"></div>
+<div class="f"><label for="email">Email</label><input type="email" id="email" name="email" required autocomplete="email"></div></div>
+<div class="f"><label for="org">Organization or business <small>(optional)</small></label><input type="text" id="org" name="org" autocomplete="organization"></div></fieldset>
+
+<fieldset><legend>About the app</legend>
+<div class="f"><label for="pname">Working name for the app</label><input type="text" id="pname" name="pname"></div>
+<div class="f"><label for="idea">What should the app do? <small>(a few sentences is perfect)</small></label><textarea id="idea" name="idea" required></textarea></div>
+<div class="f"><label for="who">Who will use it?</label><textarea id="who" name="who"></textarea></div>
+<div class="f"><label for="must">Must-have features <small>(one per line)</small></label><textarea id="must" name="must"></textarea></div>
+<div class="f"><label for="nice">Nice-to-have features <small>(one per line)</small></label><textarea id="nice" name="nice"></textarea></div>
+<div class="f"><label for="like">Apps you like or want it to feel like <small>(names or links)</small></label><textarea id="like" name="like"></textarea></div>
+<div class="f"><span class="lab">Platforms</span><div class="checks">
+<label><input type="checkbox" name="plat" value="Android phone"> Android phone</label>
+<label><input type="checkbox" name="plat" value="Android tablet"> Android tablet</label>
+<label><input type="checkbox" name="plat" value="Other / not sure"> Other or not sure</label></div></div>
+<div class="f"><span class="lab">Needs <small>(check any that apply)</small></span><div class="checks">
+<label><input type="checkbox" name="needs" value="Works without internet"> Works without internet</label>
+<label><input type="checkbox" name="needs" value="User accounts / login"> Accounts or login</label>
+<label><input type="checkbox" name="needs" value="Cloud sync or backend"> Cloud sync or backend</label>
+<label><input type="checkbox" name="needs" value="Payments or subscriptions"> Payments or subscriptions</label>
+<label><input type="checkbox" name="needs" value="Notifications"> Notifications</label>
+<label><input type="checkbox" name="needs" value="Camera or photos"> Camera or photos</label>
+<label><input type="checkbox" name="needs" value="Ads"> Ads</label></div></div>
+<div class="f"><label for="brand">Branding and artwork <small>(do you have a logo, colors or images?)</small></label><textarea id="brand" name="brand"></textarea></div></fieldset>
+
+<fieldset><legend>Timeline and budget</legend>
+<div class="row2"><div class="f"><label for="start">Ideal start date</label><input type="date" id="start" name="start"></div>
+<div class="f"><label for="due">Date you need it by</label><input type="date" id="due" name="due"></div></div>
+<div class="f"><label for="flex">How flexible is the deadline?</label><select id="flex" name="flex"><option value="">Choose one</option><option>Fixed: it must be ready by that date</option><option>Somewhat flexible</option><option>Very flexible</option><option>Not sure yet</option></select></div>
+<div class="f"><label for="budget">Budget range</label><select id="budget" name="budget"><option value="">Choose one</option><option>Under $2,000</option><option>$2,000 to $5,000</option><option>$5,000 to $10,000</option><option>$10,000 to $25,000</option><option>Over $25,000</option><option>Not sure: please advise</option></select></div>
+<div class="f"><label for="publish">Who will publish the app?</label><select id="publish" name="publish"><option value="">Choose one</option><option>I will, on my own Google Play account</option><option>I’d like help publishing it</option><option>Not sure yet</option></select></div>
+<div class="f"><label for="more">Anything else I should know?</label><textarea id="more" name="more"></textarea></div></fieldset>
+
+<div class="cta" style="margin-top:0"><button class="btn" type="submit">Email my answers to Riker &amp; Ollie Studios</button><button class="btn alt" type="button" id="copy">Copy as text</button></div>
+<div id="out" aria-live="polite"><p class="fine" id="outmsg" style="margin:0 0 8px"></p><textarea id="outtxt" readonly aria-label="Your answers as text"></textarea></div>
+</form></section>
+
+<footer><p>Riker &amp; Ollie Studios LLC · Oregon · <a href="mailto:melissa@rikerandolliestudios.com">melissa@rikerandolliestudios.com</a></p>
+<nav class="cta foot-apps" aria-label="More from Riker &amp; Ollie Studios"><a class="btn alt" href="./">All apps</a><a class="btn alt" href="drills-and-pieces.html">Drills &amp; Pieces</a><a class="btn alt" href="bunco-bunch.html">Bunco Bunch</a><a class="btn alt" href="pxl-mmo-companion.html">PXL MMO Companion</a><a class="btn alt" href="closed-alpha-reminder.html">Closed Alpha Reminder</a><a class="btn alt" href="crumb-trail.html">Crumb Trail Manager</a></nav></footer>
+</div>
+<script>
+(function(){
+  var f=document.getElementById("req"),out=document.getElementById("out"),msg=document.getElementById("outmsg"),txt=document.getElementById("outtxt");
+  function val(n){var e=f.elements[n];return e&&e.value?e.value.trim():"";}
+  function multi(n){return Array.prototype.map.call(f.querySelectorAll('input[name="'+n+'"]:checked'),function(c){return c.value;}).join(", ");}
+  function build(){
+    var L=[];
+    function add(l,v){L.push(l+": "+(v||"(not given)"));}
+    L.push("PROJECT REQUIREMENTS","");
+    add("Name",val("name"));add("Email",val("email"));add("Organization",val("org"));L.push("");
+    add("App name",val("pname"));L.push("What it should do:",val("idea")||"(not given)","");
+    L.push("Who will use it:",val("who")||"(not given)","");
+    L.push("Must-have features:",val("must")||"(not given)","");
+    L.push("Nice-to-have features:",val("nice")||"(not given)","");
+    L.push("Apps it should feel like:",val("like")||"(not given)","");
+    add("Platforms",multi("plat"));add("Needs",multi("needs"));
+    L.push("Branding and artwork:",val("brand")||"(not given)","");
+    add("Ideal start",val("start"));add("Needed by",val("due"));add("Deadline flexibility",val("flex"));
+    add("Budget",val("budget"));add("Publishing",val("publish"));L.push("");
+    L.push("Anything else:",val("more")||"(not given)");
+    return L.join("\n");
+  }
+  function show(m){out.style.display="block";msg.textContent=m;txt.value=build();}
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    var body=build(),subj="App project: "+(val("pname")||val("name")||"new inquiry");
+    window.location.href="mailto:melissa@rikerandolliestudios.com?subject="+encodeURIComponent(subj)+"&body="+encodeURIComponent(body);
+    show("If your email app didn’t open, copy this text and email it to melissa@rikerandolliestudios.com.");
+  });
+  document.getElementById("copy").addEventListener("click",function(){
+    show("");
+    var done=function(){msg.textContent="Copied. Paste it into an email to melissa@rikerandolliestudios.com.";};
+    var fail=function(){txt.focus();txt.select();msg.textContent="Your browser blocked automatic copying. The text is selected below: press Ctrl+C (or Cmd+C) to copy it.";};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt.value).then(done,fail);}else{fail();}
+  });
+})();
+</script><script src="site.js"></script></body></html>
