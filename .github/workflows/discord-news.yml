@@ -1,0 +1,56 @@
+name: Post to Discord App News
+
+# Posts an embed to the App News channel when a GitHub release is published,
+# or when you run it by hand from the Actions tab (to post any announcement).
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      title:
+        description: "Embed title"
+        required: true
+        default: "News from Riker & Ollie Studios"
+      message:
+        description: "Embed text"
+        required: true
+      link:
+        description: "Link (optional)"
+        required: false
+        default: "https://rikerandolliestudios.com"
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send embed to Discord
+        env:
+          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          EVENT: ${{ github.event_name }}
+          REL_NAME: ${{ github.event.release.name }}
+          REL_TAG: ${{ github.event.release.tag_name }}
+          REL_BODY: ${{ github.event.release.body }}
+          REL_URL: ${{ github.event.release.html_url }}
+          IN_TITLE: ${{ github.event.inputs.title }}
+          IN_MSG: ${{ github.event.inputs.message }}
+          IN_LINK: ${{ github.event.inputs.link }}
+        run: |
+          if [ -z "$WEBHOOK" ]; then echo "DISCORD_WEBHOOK secret is not set"; exit 1; fi
+          if [ "$EVENT" = "release" ]; then
+            TITLE="${REL_NAME:-$REL_TAG}"
+            DESC="$REL_BODY"
+            LINK="$REL_URL"
+          else
+            TITLE="$IN_TITLE"
+            DESC="$IN_MSG"
+            LINK="$IN_LINK"
+          fi
+          # Discord limits: title 256 characters, description 4096
+          TITLE="${TITLE:0:250}"
+          DESC="${DESC:0:3500}"
+          jq -n --arg t "$TITLE" --arg d "$DESC" --arg u "$LINK" \
+            '{embeds:[{title:$t,description:$d,url:$u,color:7506394,footer:{text:"Riker & Ollie Studios"}}]}' \
+          | curl -fsS -H "Content-Type: application/json" -d @- "$WEBHOOK"
