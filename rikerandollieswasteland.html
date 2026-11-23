@@ -154,7 +154,7 @@ tr:last-child td{border-bottom:0}
   <li><b>No advertising or spam</b>, including other servers.</li>
   <li><b>Keep it family friendly.</b> Signs, names and chat must be age appropriate. Players must be 13+.</li>
   <li><b>PvE means PvE.</b> No griefing, base blocking or loot stealing outside the PvP Monument.</li>
-  <li><b>Report</b> problems to staff in game or with a Discord ticket.</li>
+  <li><b>Report</b> problems to staff with <code>/ticket</code> in game or the ticket button in Discord <b>#open-a-ticket</b> (see <a href="#tickets">Tickets</a>).</li>
   <li><b>Chat and PMs are logged.</b> Admins can see private messages, to keep the community safe.</li>
 </ol>
 <p>Staff can warn, mute, kick or ban for breaking these. Moderation is at the sole discretion of the admins and staff, and no reason is required.</p>
@@ -234,6 +234,7 @@ tr:last-child td{border-bottom:0}
   <li>Some items have a <b>daily limit</b>, which resets at midnight UTC.</li>
   <li><b>Raid Bases:</b> buy a raid base of any tier (<a href="#raids">see Raid bases</a>), with PawCoins or Treats.</li>
   <li><b>Titles:</b> chat titles you buy with Treats.</li>
+  <li><b>Base:</b> <a href="#planters">No-Care planters</a>, the same price for everyone.</li>
   <li>Some categories are priced in <b>Treats</b> instead of PawCoins.</li>
 </ul>
 
@@ -493,6 +494,9 @@ tr:last-child td{border-bottom:0}
   <li><code>/autodoor on|off</code>: doors you open close again after 5 seconds (<code>/autodoor 2-60</code> picks the seconds; <code>/autodoor this</code> stops it for the door you look at).</li>
   <li><code>/qol</code> shows these commands and your settings.</li>
 </ul>
+<h3 id="planters">No-Care planters</h3>
+<p>Buy a <b>No-Care Large Planter</b> (500 PawCoins) or <b>No-Care Small Planter</b> (250) in the SHOP tab, <b>Base</b> category. Plants in them grow as if they always had perfect water, light, warmth and soil: <b>no sprinklers, lamps, heaters or fertilizer needed</b>, and they use no water. They still grow through their normal stages at the best normal speed, and you harvest and take clones as usual. Up to <b>4 per base</b> (per TC, you need building privilege), not at the PvP Monument. Pick one up to get the No-Care planter back. <code>/planters</code> explains it.</p>
+
 <h3 id="rec">Personal recycler</h3>
 <p><code>/rec</code> (<span class="tier t-w">W</span> Wastelander) opens a recycler anywhere at <b>2× speed</b>. Closing it gives everything back; if your inventory is full, the rest waits in the recycler for next time. Not while PvP-active, at the PvP Monument or in raid zones. <code>/rec help</code> explains it.</p>
 <h3 id="sil">Image signs</h3>
@@ -525,6 +529,13 @@ tr:last-child td{border-bottom:0}
   <li>Post just the code in <b>#how-to-link</b>. The bot links your accounts and deletes the message.</li>
 </ol>
 <p>Linking gives you the Linked role, syncs your Wastelander and VIP roles, and gives Server Boosters a <code>[Booster]</code> tag in game. <code>/discord unlink</code> undoes it. Global chat is shared both ways with the Discord's in-game chat channel.</p>
+<h3 id="tickets">Tickets: asking staff for help</h3>
+<ul>
+  <li><b>In game:</b> <code>/ticket &lt;what happened&gt;</code>. Start with a type if you like: <code>bug</code>, <code>report</code> (a player), <code>vip</code> (VIP or the store) or <code>other</code>, for example <code>/ticket bug my furnace vanished after the restart</code>.</li>
+  <li><b>On Discord:</b> in <b>#open-a-ticket</b>, press the button for your type and fill in the short form.</li>
+  <li>Your ticket is a private thread that only you and staff can see. If your Discord is linked (<code>/discord</code>), you're added to it. Staff replies also show in your game chat, and if you're offline you see them when you next log in.</li>
+  <li><code>/ticket</code> shows your ticket, <code>/ticket &lt;text&gt;</code> adds to it, <code>/ticket close</code> closes it. One open ticket at a time, and a short wait before opening another.</li>
+</ul>
 </section>
 
 <section id="trading"><h2>Trading with players</h2>
@@ -678,6 +689,7 @@ tr:last-child td{border-bottom:0}
 <tr><td><code>/stack</code> <span class="tier t-w">W</span> <span class="tier t-t">T</span> <span class="tier t-h">H</span> <span class="tier t-pl">PL</span></td><td>Stack chests</td></tr>
 <tr><td><code>/float</code> <span class="tier t-w">W</span>, <code>/rec</code> <span class="tier t-w">W</span></td><td>Floating foundation; personal recycler</td></tr>
 <tr><td><code>/rec pickup</code></td><td>Pick up your placed Recycler</td></tr>
+<tr><td><code>/planters</code></td><td>How <a href="#planters">No-Care planters</a> work, and how many your base has</td></tr>
 <tr><td><code>/sort</code>, <code>/autosort</code>, <code>/autodoor</code>, <code>/qol</code></td><td>Sorting and door closer</td></tr>
 <tr><td><code>/send</code> <span class="tier t-pl">PL</span>, <code>/splitter</code> <span class="tier t-pl">PL</span></td><td>Send to boxes; furnace splitter</td></tr>
 <tr><td><code>/sil</code> <span class="tier t-h">H</span> <span class="tier t-pl">PL</span></td><td>Image signs</td></tr>
@@ -689,6 +701,7 @@ tr:last-child td{border-bottom:0}
 <tr><td><code>/spawn &lt;vehicle&gt;</code>, <code>/recall [vehicle|all]</code></td><td>Bring your vehicle out near you, or put it away with its fuel and cargo</td></tr>
 <tr><td><code>/garage</code>, <code>/garage repair|allow|unallow &lt;name&gt;</code></td><td>Your vehicles; repair a destroyed one; let a friend drive</td></tr>
 <tr><td><code>/discord</code>, <code>/discord unlink</code></td><td>Link your Discord</td></tr>
+<tr><td><code>/ticket [type] &lt;text&gt;</code>, <code>/ticket close</code></td><td>Ask staff for help (<a href="#tickets">Tickets</a>)</td></tr>
 </tbody></table></div>
 </section>
 
