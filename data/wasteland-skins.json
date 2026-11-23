@@ -1,0 +1,386 @@
+{
+  "sets": [
+    {
+      "key": "free",
+      "name": "Base",
+      "code": "Free",
+      "who": "everyone"
+    },
+    {
+      "key": "wastelander",
+      "name": "Wastelander",
+      "code": "W",
+      "who": "Wastelanders"
+    },
+    {
+      "key": "vip1",
+      "name": "Tracker",
+      "code": "T",
+      "who": "Tracker, Hound and Pack Leader"
+    },
+    {
+      "key": "vip2",
+      "name": "Hound",
+      "code": "H",
+      "who": "Hound and Pack Leader"
+    },
+    {
+      "key": "vip3",
+      "name": "Pack Leader",
+      "code": "PL",
+      "who": "Pack Leader"
+    }
+  ],
+  "skins": [
+    {
+      "item": "AK47",
+      "short": "rifle.ak",
+      "name": "Night Digital Assault Rifle",
+      "set": "wastelander",
+      "setName": "Wastelander",
+      "code": "W",
+      "id": "3820507224",
+      "img": "https://images.steamusercontent.com/ugc/12496695519474329335/69752EA2A3ECC05BBF3A1C9362E2151677A0EB5A/"
+    },
+    {
+      "item": "Hoodie",
+      "short": "hoodie",
+      "name": "Night Digital Hoodie",
+      "set": "wastelander",
+      "setName": "Wastelander",
+      "code": "W",
+      "id": "3820506792",
+      "img": "https://images.steamusercontent.com/ugc/14643194974379743932/91BA0403ABA278B9C6796C93D85CA1D568A6D446/"
+    },
+    {
+      "item": "Metal Chest Plate",
+      "short": "metal.plate.torso",
+      "name": "Night Digital Metal Chest Plate",
+      "set": "wastelander",
+      "setName": "Wastelander",
+      "code": "W",
+      "id": "3820506683",
+      "img": "https://images.steamusercontent.com/ugc/18062846240639029065/AF21973E48BC3D7681DA70E8605453C849D780E9/"
+    },
+    {
+      "item": "Metal Facemask",
+      "short": "metal.facemask",
+      "name": "Night Digital Metal Facemask",
+      "set": "wastelander",
+      "setName": "Wastelander",
+      "code": "W",
+      "id": "3820506578",
+      "img": "https://images.steamusercontent.com/ugc/9411446808279481494/5D4AB9C98F6152E6F9697767EB8C7A55DC856EBD/"
+    },
+    {
+      "item": "Pants",
+      "short": "pants",
+      "name": "Night Digital Pants",
+      "set": "wastelander",
+      "setName": "Wastelander",
+      "code": "W",
+      "id": "3820506885",
+      "img": "https://images.steamusercontent.com/ugc/9632660495538558991/4692E77848893140584A8CE559E1863ECA6026D9/"
+    },
+    {
+      "item": "Work Boots",
+      "short": "shoes.boots",
+      "name": "Night Digital Boots",
+      "set": "wastelander",
+      "setName": "Wastelander",
+      "code": "W",
+      "id": "3820507114",
+      "img": "https://images.steamusercontent.com/ugc/16801751862575249964/AF72A4EF462D92D45766BDE9EEBAAFB050BB0D7B/"
+    },
+    {
+      "item": "AK47",
+      "short": "rifle.ak",
+      "name": "ALLFATHER AK47",
+      "set": "vip1",
+      "setName": "Tracker",
+      "code": "T",
+      "id": "3820626959",
+      "img": "https://images.steamusercontent.com/ugc/17277416780959064641/3E45FA443F1178B7EBD14D40288F21752F33D801/"
+    },
+    {
+      "item": "Hoodie",
+      "short": "hoodie",
+      "name": "ALLFATHER Hoodie",
+      "set": "vip1",
+      "setName": "Tracker",
+      "code": "T",
+      "id": "3820616322",
+      "img": "https://images.steamusercontent.com/ugc/13061511161215441846/B991288274CE0379E6824B14D3D96D852A8FE140/"
+    },
+    {
+      "item": "Metal Chest Plate",
+      "short": "metal.plate.torso",
+      "name": "ALLFATHER Metal Chest Plate",
+      "set": "vip1",
+      "setName": "Tracker",
+      "code": "T",
+      "id": "3820616175",
+      "img": "https://images.steamusercontent.com/ugc/16529490768699260367/14E8A2C3CC38CA25B8E82EF91D37D191BEBC396F/"
+    },
+    {
+      "item": "Metal Facemask",
+      "short": "metal.facemask",
+      "name": "ALLFATHER Metal Facemask",
+      "set": "vip1",
+      "setName": "Tracker",
+      "code": "T",
+      "id": "3820616006",
+      "img": "https://images.steamusercontent.com/ugc/16405725691339336047/3E6C360E4264F2BD9A2A1F31E162B11D332B8FBE/"
+    },
+    {
+      "item": "Pants",
+      "short": "pants",
+      "name": "ALLFATHER Pants",
+      "set": "vip1",
+      "setName": "Tracker",
+      "code": "T",
+      "id": "3820616508",
+      "img": "https://images.steamusercontent.com/ugc/10033417323980178443/C6EF9A754441A3B3B0708B9016F6D8AC9F5AC0CD/"
+    },
+    {
+      "item": "Tactical Gloves",
+      "short": "tactical.gloves",
+      "name": "ALLFATHER Tactical Gloves",
+      "set": "vip1",
+      "setName": "Tracker",
+      "code": "T",
+      "id": "3820616813",
+      "img": "https://images.steamusercontent.com/ugc/15942022404669613852/AE77B2A375086F006B0AF9954F906D37C027F0D4/"
+    },
+    {
+      "item": "Work Boots",
+      "short": "shoes.boots",
+      "name": "ALLFATHER Boots",
+      "set": "vip1",
+      "setName": "Tracker",
+      "code": "T",
+      "id": "3820616925",
+      "img": "https://images.steamusercontent.com/ugc/9958533957516338817/5377448451B9142CEC5D16A9CA89A9484E7103F4/"
+    },
+    {
+      "item": "Armored Door",
+      "short": "door.hinged.toptier",
+      "name": "Kalyna Lacquer — Armored Door",
+      "set": "vip2",
+      "setName": "Hound",
+      "code": "H",
+      "id": "3839051485",
+      "img": "https://images.steamusercontent.com/ugc/16335284563380476703/553C9A4A14A0C037540F33BC9722652439C05610/"
+    },
+    {
+      "item": "Hoodie",
+      "short": "hoodie",
+      "name": "ARES Hoodie",
+      "set": "vip2",
+      "setName": "Hound",
+      "code": "H",
+      "id": "3824400453",
+      "img": "https://images.steamusercontent.com/ugc/17716537074834119021/0D229439C5F7F2C4BA6DAC0F3A067FB2805BA6FB/"
+    },
+    {
+      "item": "Metal Chest Plate",
+      "short": "metal.plate.torso",
+      "name": "ARES Metal Chest Plate",
+      "set": "vip2",
+      "setName": "Hound",
+      "code": "H",
+      "id": "3824400321",
+      "img": "https://images.steamusercontent.com/ugc/16129665519924575603/AF0005DB72EBF8D29D85F97A3B8F0AB59162EDF0/"
+    },
+    {
+      "item": "Metal Facemask",
+      "short": "metal.facemask",
+      "name": "ARES Metal Facemask",
+      "set": "vip2",
+      "setName": "Hound",
+      "code": "H",
+      "id": "3824400180",
+      "img": "https://images.steamusercontent.com/ugc/13922909652974264394/33E05E039B689D0E427CE63C5187D7ED1BEB49E8/"
+    },
+    {
+      "item": "Pants",
+      "short": "pants",
+      "name": "ARES Pants",
+      "set": "vip2",
+      "setName": "Hound",
+      "code": "H",
+      "id": "3824400564",
+      "img": "https://images.steamusercontent.com/ugc/15466483163732439198/92D3C245A9EFE9145C84BEC62AA362B7B6C5E6D7/"
+    },
+    {
+      "item": "Tactical Gloves",
+      "short": "tactical.gloves",
+      "name": "ARES Tactical Gloves",
+      "set": "vip2",
+      "setName": "Hound",
+      "code": "H",
+      "id": "3824400835",
+      "img": "https://images.steamusercontent.com/ugc/15998039092936861849/A040789C43C3E0685AB9C81D0D102441AFF11515/"
+    },
+    {
+      "item": "Work Boots",
+      "short": "shoes.boots",
+      "name": "ARES Boots",
+      "set": "vip2",
+      "setName": "Hound",
+      "code": "H",
+      "id": "3824400941",
+      "img": "https://images.steamusercontent.com/ugc/12858137324602777191/EE448E241A0A46DA0FFB9DDB2A0656073410AC80/"
+    },
+    {
+      "item": "AK47",
+      "short": "rifle.ak",
+      "name": "GLADIATOR AK47",
+      "set": "vip3",
+      "setName": "Pack Leader",
+      "code": "PL",
+      "id": "3824277693",
+      "img": "https://images.steamusercontent.com/ugc/17912011274273351238/E68DFD2BC0F7FD30F51EE0E1BD713F43A3814941/"
+    },
+    {
+      "item": "AK47",
+      "short": "rifle.ak",
+      "name": "Toxic Spill Assault Rifle",
+      "set": "vip3",
+      "setName": "Pack Leader",
+      "code": "PL",
+      "id": "3820506476",
+      "img": "https://images.steamusercontent.com/ugc/14210646198152500953/FC80854B8A376805ACF65AC1920CCD03F3EA44F8/"
+    },
+    {
+      "item": "Chair",
+      "short": "chair",
+      "name": "Gilded Rosace — Chair",
+      "set": "vip3",
+      "setName": "Pack Leader",
+      "code": "PL",
+      "id": "3838494659",
+      "img": "https://images.steamusercontent.com/ugc/13574936273296822724/BBFE09BB18F598E03A2A122265A07E36313A44A3/"
+    },
+    {
+      "item": "Hoodie",
+      "short": "hoodie",
+      "name": "GLADIATOR Hoodie",
+      "set": "vip3",
+      "setName": "Pack Leader",
+      "code": "PL",
+      "id": "3824276923",
+      "img": "https://images.steamusercontent.com/ugc/17716878006825252908/63F66F41D7C4E90910CF9A45F2CBF2D6BF1C7F98/"
+    },
+    {
+      "item": "Hoodie",
+      "short": "hoodie",
+      "name": "Toxic Spill Hoodie",
+      "set": "vip3",
+      "setName": "Pack Leader",
+      "code": "PL",
+      "id": "3820506035",
+      "img": "https://images.steamusercontent.com/ugc/13333228593062555882/B079DCFD90A57468757CC09625C3784CBEAAD4C6/"
+    },
+    {
+      "item": "Metal Chest Plate",
+      "short": "metal.plate.torso",
+      "name": "GLADIATOR Metal Chest Plate",
+      "set": "vip3",
+      "setName": "Pack Leader",
+      "code": "PL",
+      "id": "3824276723",
+      "img": "https://images.steamusercontent.com/ugc/12262782763229375810/BF728312040C8F5B10FC9A1C3906CA0966800377/"
+    },
+    {
+      "item": "Metal Chest Plate",
+      "short": "metal.plate.torso",
+      "name": "Toxic Spill Metal Chest Plate",
+      "set": "vip3",
+      "setName": "Pack Leader",
+      "code": "PL",
+      "id": "3820505899",
+      "img": "https://images.steamusercontent.com/ugc/16312907809344403491/A825905D8678A2C8D8C4061E523B02E667A25CEC/"
+    },
+    {
+      "item": "Metal Facemask",
+      "short": "metal.facemask",
+      "name": "GLADIATOR Metal Facemask",
+      "set": "vip3",
+      "setName": "Pack Leader",
+      "code": "PL",
+      "id": "3824276556",
+      "img": "https://images.steamusercontent.com/ugc/17881217550793505759/20411C862EFB4BB08CE827F66F68D453F25454EE/"
+    },
+    {
+      "item": "Metal Facemask",
+      "short": "metal.facemask",
+      "name": "Toxic Spill Metal Facemask",
+      "set": "vip3",
+      "setName": "Pack Leader",
+      "code": "PL",
+      "id": "3820505808",
+      "img": "https://images.steamusercontent.com/ugc/17975044053836303447/D114DC7AC20807DAE56FC0D5E88A8217E23E3B65/"
+    },
+    {
+      "item": "Pants",
+      "short": "pants",
+      "name": "GLADIATOR Pants",
+      "set": "vip3",
+      "setName": "Pack Leader",
+      "code": "PL",
+      "id": "3824277064",
+      "img": "https://images.steamusercontent.com/ugc/12933803740691112884/7A6D4FBBE745A28DE54DB8EBFF815654313146A4/"
+    },
+    {
+      "item": "Pants",
+      "short": "pants",
+      "name": "Toxic Spill Pants",
+      "set": "vip3",
+      "setName": "Pack Leader",
+      "code": "PL",
+      "id": "3820506145",
+      "img": "https://images.steamusercontent.com/ugc/17587157260846840537/17B2C3D8ED9E314C788C24B681CDB28162607292/"
+    },
+    {
+      "item": "Tactical Gloves",
+      "short": "tactical.gloves",
+      "name": "GLADIATOR Tactical Gloves",
+      "set": "vip3",
+      "setName": "Pack Leader",
+      "code": "PL",
+      "id": "3824277399",
+      "img": "https://images.steamusercontent.com/ugc/14145339287437240609/54CCF6E7EF5F6EF04FBC4E8C0A31E23BCD009A77/"
+    },
+    {
+      "item": "Tactical Gloves",
+      "short": "tactical.gloves",
+      "name": "Toxic Spill Tactical Gloves",
+      "set": "vip3",
+      "setName": "Pack Leader",
+      "code": "PL",
+      "id": "3820506256",
+      "img": "https://images.steamusercontent.com/ugc/14688019949530736258/E4F9C2777558B0A0A3CC6BADB19EA266BCF61307/"
+    },
+    {
+      "item": "Work Boots",
+      "short": "shoes.boots",
+      "name": "GLADIATOR Boots",
+      "set": "vip3",
+      "setName": "Pack Leader",
+      "code": "PL",
+      "id": "3824277532",
+      "img": "https://images.steamusercontent.com/ugc/15395870112916454920/C0B26104EED388BD0C688B537E3E39F1DD2CCC10/"
+    },
+    {
+      "item": "Work Boots",
+      "short": "shoes.boots",
+      "name": "Toxic Spill Boots",
+      "set": "vip3",
+      "setName": "Pack Leader",
+      "code": "PL",
+      "id": "3820506370",
+      "img": "https://images.steamusercontent.com/ugc/13432072691193159683/93F85C9C1BFC54078437C656B14993AD271B285A/"
+    }
+  ]
+}

@@ -468,7 +468,14 @@ input.ctl{flex:1 1 200px}
 <!-- skins:data:end -->
 <script>
 (function(){
-  var data = JSON.parse(document.getElementById("skin-data").textContent);
+  // The game server publishes data/wasteland-skins.json whenever skins change (ROSkins).
+  // The list built into this page is the fallback if that file can't be loaded.
+  var embedded = JSON.parse(document.getElementById("skin-data").textContent);
+  fetch("data/wasteland-skins.json?t=" + Date.now(), {cache: "no-store"})
+    .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function(d){ start(d && d.skins && d.sets ? d : embedded); }, function(){ start(embedded); });
+
+  function start(data){
   var css = {free:"t-free", wastelander:"t-w", vip1:"t-t", vip2:"t-h", vip3:"t-pl"};
   var state = {set:"", item:"", q:""};
   var params = new URLSearchParams(location.search);
@@ -523,6 +530,7 @@ input.ctl{flex:1 1 200px}
     history.replaceState(null, "", location.pathname + (p.toString() ? "?" + p : ""));
   }
   render();
+  }
 })();
 </script>
 <script src="site.js"></script>
