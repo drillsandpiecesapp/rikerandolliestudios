@@ -33,6 +33,66 @@
   ],
   "skins": [
     {
+      "item": "Hoodie",
+      "short": "hoodie",
+      "name": "Rusty & Chill | Night Market Hoodie",
+      "set": "free",
+      "setName": "Base",
+      "code": "Free",
+      "id": "3843540760",
+      "img": "https://images.steamusercontent.com/ugc/12479800214826821274/AAF25C9F8B2AC7DB7566979AABF508BDC48C36A9/"
+    },
+    {
+      "item": "Metal Chest Plate",
+      "short": "metal.plate.torso",
+      "name": "Driftline Chest Plate (Pink)",
+      "set": "free",
+      "setName": "Base",
+      "code": "Free",
+      "id": "3823835542",
+      "img": "https://images.steamusercontent.com/ugc/12409029684397628500/0DFAB697193B6FA0C3F07A8E82BC0CA83906A1C6/"
+    },
+    {
+      "item": "Metal Facemask",
+      "short": "metal.facemask",
+      "name": "Driftline Facemask (Pink)",
+      "set": "free",
+      "setName": "Base",
+      "code": "Free",
+      "id": "3823835517",
+      "img": "https://images.steamusercontent.com/ugc/12881775694490214868/92A2DB2071B450C19E607F161699B6E4DCD6E382/"
+    },
+    {
+      "item": "Small Backpack",
+      "short": "smallbackpack",
+      "name": "Driftline Small Backpack (Pink)",
+      "set": "free",
+      "setName": "Base",
+      "code": "Free",
+      "id": "3824243688",
+      "img": "https://images.steamusercontent.com/ugc/17652345674720800304/39F08DF877110CB8668FE8641FF2A3C06C15F03B/"
+    },
+    {
+      "item": "Tactical Gloves",
+      "short": "tactical.gloves",
+      "name": "Driftline Tactical Gloves (Pink)",
+      "set": "free",
+      "setName": "Base",
+      "code": "Free",
+      "id": "3823835709",
+      "img": "https://images.steamusercontent.com/ugc/12664948238699586278/56AF99B7EB4A25ECE38E9864F9C7ED84B18CC655/"
+    },
+    {
+      "item": "Work Boots",
+      "short": "shoes.boots",
+      "name": "Driftline Work Boots (Pink)",
+      "set": "free",
+      "setName": "Base",
+      "code": "Free",
+      "id": "3823835736",
+      "img": "https://images.steamusercontent.com/ugc/12154830533012513779/FEB244259C732030AF59E81438D41397C5FA4FEF/"
+    },
+    {
       "item": "AK47",
       "short": "rifle.ak",
       "name": "Night Digital Assault Rifle",
