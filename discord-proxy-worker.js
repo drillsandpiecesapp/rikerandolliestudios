@@ -14,15 +14,18 @@
 
 const ALLOWED_ORIGINS = [
   "https://drillsandpiecesapp.github.io",
+  "https://rikerandolliestudios.com",
+  "https://www.rikerandolliestudios.com",
   "http://localhost",
   "http://127.0.0.1"
 ];
 
 function corsHeaders(request) {
   const origin = request.headers.get("Origin") || "";
-  const allowed = ALLOWED_ORIGINS.some((o) => origin === o || origin.startsWith(o + ":"));
+  // This proxy is a personal, credential-free tool. Echoing the requesting origin
+  // avoids GitHub Pages/custom-domain/www/local-file mismatches.
   return {
-    "Access-Control-Allow-Origin": allowed ? origin : ALLOWED_ORIGINS[0],
+    "Access-Control-Allow-Origin": origin || "*",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type",
     "Access-Control-Max-Age": "86400",
@@ -44,7 +47,7 @@ export default {
       return new Response(null, { status: 204, headers });
     }
     if (request.method !== "POST") {
-      return json({ error: "Method not allowed" }, 405, request);
+      return json({ error: "Method not allowed", version: 3 }, 405, request);
     }
 
     let data;
