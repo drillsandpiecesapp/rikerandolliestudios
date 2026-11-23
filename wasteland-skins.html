@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wasteland Skin Box</title>
+<meta name="description" content="Every skin in the Riker &amp; Ollie's Wasteland skin box, by tier: free Steam Workshop skins you can put on your items with /skin.">
+<meta property="og:title" content="Wasteland Skin Box">
+<meta property="og:description" content="Every skin in the /skin box on Riker &amp; Ollie's Wasteland, by tier, with pictures.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://rikerandolliestudios.com/img/pawcoin/pawcoin-512.png">
+<meta name="theme-color" content="#1A0A44">
+<link rel="icon" type="image/png" href="img/pawcoin/pawcoin-icon-64.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="stylesheet" href="studio.css"><link rel="stylesheet" href="theme.css"><script src="theme.js"></script>
+<style>
+.wiki .topbar{position:relative}
+.wiki .bar{grid-template-columns:auto 1fr}
+.wiki .topbar .mono{width:clamp(60px,8vw,84px);border-radius:50%}
+.wiki .topbar .cta{grid-column:2;margin:0}
+.panel{background:var(--surface);border:1.5px solid var(--line);border-radius:22px;padding:18px 20px;margin:24px 0 18px;-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur)}
+.panel p{margin:0 0 12px}
+code{font-family:Consolas,"Cascadia Mono","SFMono-Regular",Menlo,monospace;font-size:.88em;background:var(--soft);border:1px solid var(--line);padding:0 5px;border-radius:6px}
+.filters{display:grid;gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{cursor:pointer;border:1.5px solid var(--line);background:var(--soft);color:var(--ink);border-radius:999px;padding:5px 13px;font:inherit;font-weight:700;font-size:.9rem;line-height:1.3}
+.chip[aria-pressed="true"]{border-color:var(--brand);box-shadow:0 0 0 2px var(--brand) inset}
+.chip:focus-visible,.ctl:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.ctl{font:inherit;color:var(--ink);background:var(--soft);border:1.5px solid var(--line);border-radius:12px;padding:7px 11px;min-width:0}
+select.ctl{max-width:100%}
+input.ctl{flex:1 1 200px}
+.count{color:var(--muted);font-size:.92rem;margin-left:auto}
+.tier{display:inline-block;padding:0 8px;border-radius:999px;font-weight:800;font-size:.8rem;color:#1A0A44;line-height:1.6}
+.t-free{background:#d9d2ea}.t-w{background:#CD7F32}.t-t{background:#5BC0EB}.t-h{background:#B57EDC}.t-pl{background:#FFD700}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;margin:0 0 30px}
+.card{display:flex;flex-direction:column;background:var(--surface);border:1.5px solid var(--line);border-radius:18px;overflow:hidden;text-decoration:none;color:var(--ink);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur)}
+.card:hover,.card:focus-visible{border-color:var(--brand)}
+.thumb{aspect-ratio:1/1;background:var(--soft);display:flex;align-items:center;justify-content:center}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb span{color:var(--muted);font-size:.85rem;padding:10px;text-align:center}
+.meta{padding:10px 12px 12px;display:grid;gap:4px}
+.meta b{font-size:.95rem;line-height:1.3}
+.meta small{color:var(--muted);font-size:.85rem}
+.empty{color:var(--muted);font-style:italic;padding:8px 2px 30px}
+@media(max-width:900px){.wiki .bar{grid-template-columns:1fr;padding-right:60px}.wiki .topbar .cta{grid-column:1}}
+@media(max-width:560px){.wrap{padding:0 16px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.panel{padding:16px}.count{margin-left:0;width:100%}}
+</style>
+</head>
+<body class="studio wiki">
+<a class="skip" href="#skins">Skip to the skins</a>
+
+<header class="topbar"><div class="wrap bar">
+  <div class="brand-row"><img class="mono" src="img/pawcoin/pawcoin-512.png" alt="The PawCoin: a gold coin with a dog paw print" width="512" height="512"><h1>Wasteland Skin Box</h1></div>
+  <p class="tag">Every skin you can put on your items with <code>/skin</code> on Riker &amp; Ollie's Wasteland.</p>
+  <div class="cta"><a class="btn small" href="rikerandollieswasteland.html">Server wiki</a><a class="btn alt small" href="rikerandollieswasteland.html#perks">Perks by tier</a><a class="btn alt small" href="./">Studio home</a></div>
+</div></header>
+
+<main class="wrap" id="content">
+<section class="panel" aria-label="Filters">
+  <p>Type <code>/skin</code> in game, put an item in the box and pick a skin. All skins are free Steam Workshop skins. Everyone gets the Base set, each tier adds its own set, and Hound and Pack Leader also get the VIP sets below them. Click a skin to open it on the Workshop.</p>
+  <div class="filters">
+    <div class="chips" id="tiers" role="group" aria-label="Filter by tier"></div>
+    <div class="row">
+      <select id="item" class="ctl" aria-label="Item type"><option value="">All items</option></select>
+      <input id="q" class="ctl" type="search" placeholder="Search skin names" aria-label="Search skin names">
+      <span class="count" id="count" aria-live="polite"></span>
+    </div>
+  </div>
+</section>
+
+<div class="grid" id="skins"></div>
+<p class="empty" id="none" hidden>No skins match these filters.</p>
+</main>
+
+<footer class="studio-foot"><div class="wrap">
+  <p>Riker &amp; Ollie's Wasteland is an unofficial community server run by Riker &amp; Ollie Studios. It is not affiliated with or endorsed by Facepunch Studios. Rust is a trademark of Facepunch Studios. Skins are made by their Steam Workshop authors; pictures come from the Steam Workshop.</p>
+  <div class="foot-btns"><a class="btn alt small" href="rikerandollieswasteland.html">Server wiki</a><a class="btn alt small" href="./">Studio home</a></div>
+  <p>© 2026 Riker &amp; Ollie Studios LLC.</p>
+</div></footer>
+
+<!-- skins:data:start -->
+<script id="skin-data" type="application/json">
+{
+"sets": [
+{
+"key": "free",
+"name": "Base",
+"code": "Free",
+"who": "everyone"
+},
+{
+"key": "wastelander",
+"name": "Wastelander",
+"code": "W",
+"who": "Wastelanders"
+},
+{
+"key": "vip1",
+"name": "Tracker",
+"code": "T",
+"who": "Tracker, Hound and Pack Leader"
+},
+{
+"key": "vip2",
+"name": "Hound",
+"code": "H",
+"who": "Hound and Pack Leader"
+},
+{
+"key": "vip3",
+"name": "Pack Leader",
+"code": "PL",
+"who": "Pack Leader"
+}
+],
+"skins": [
+{
+"item": "AK47",
+"short": "rifle.ak",
+"name": "Night Digital Assault Rifle",
+"set": "wastelander",
+"setName": "Wastelander",
+"code": "W",
+"id": "3820507224",
+"img": "https://images.steamusercontent.com/ugc/12496695519474329335/69752EA2A3ECC05BBF3A1C9362E2151677A0EB5A/"
+},
+{
+"item": "Hoodie",
+"short": "hoodie",
+"name": "Night Digital Hoodie",
+"set": "wastelander",
+"setName": "Wastelander",
+"code": "W",
+"id": "3820506792",
+"img": "https://images.steamusercontent.com/ugc/14643194974379743932/91BA0403ABA278B9C6796C93D85CA1D568A6D446/"
+},
+{
+"item": "Metal Chest Plate",
+"short": "metal.plate.torso",
+"name": "Night Digital Metal Chest Plate",
+"set": "wastelander",
+"setName": "Wastelander",
+"code": "W",
+"id": "3820506683",
+"img": "https://images.steamusercontent.com/ugc/18062846240639029065/AF21973E48BC3D7681DA70E8605453C849D780E9/"
+},
+{
+"item": "Metal Facemask",
+"short": "metal.facemask",
+"name": "Night Digital Metal Facemask",
+"set": "wastelander",
+"setName": "Wastelander",
+"code": "W",
+"id": "3820506578",
+"img": "https://images.steamusercontent.com/ugc/9411446808279481494/5D4AB9C98F6152E6F9697767EB8C7A55DC856EBD/"
+},
+{
+"item": "Pants",
+"short": "pants",
+"name": "Night Digital Pants",
+"set": "wastelander",
+"setName": "Wastelander",
+"code": "W",
+"id": "3820506885",
+"img": "https://images.steamusercontent.com/ugc/9632660495538558991/4692E77848893140584A8CE559E1863ECA6026D9/"
+},
+{
+"item": "Work Boots",
+"short": "shoes.boots",
+"name": "Night Digital Boots",
+"set": "wastelander",
+"setName": "Wastelander",
+"code": "W",
+"id": "3820507114",
+"img": "https://images.steamusercontent.com/ugc/16801751862575249964/AF72A4EF462D92D45766BDE9EEBAAFB050BB0D7B/"
+},
+{
+"item": "AK47",
+"short": "rifle.ak",
+"name": "ALLFATHER AK47",
+"set": "vip1",
+"setName": "Tracker",
+"code": "T",
+"id": "3820626959",
+"img": "https://images.steamusercontent.com/ugc/17277416780959064641/3E45FA443F1178B7EBD14D40288F21752F33D801/"
+},
+{
+"item": "Hoodie",
+"short": "hoodie",
+"name": "ALLFATHER Hoodie",
+"set": "vip1",
+"setName": "Tracker",
+"code": "T",
+"id": "3820616322",
+"img": "https://images.steamusercontent.com/ugc/13061511161215441846/B991288274CE0379E6824B14D3D96D852A8FE140/"
+},
+{
+"item": "Metal Chest Plate",
+"short": "metal.plate.torso",
+"name": "ALLFATHER Metal Chest Plate",
+"set": "vip1",
+"setName": "Tracker",
+"code": "T",
+"id": "3820616175",
+"img": "https://images.steamusercontent.com/ugc/16529490768699260367/14E8A2C3CC38CA25B8E82EF91D37D191BEBC396F/"
+},
+{
+"item": "Metal Facemask",
+"short": "metal.facemask",
+"name": "ALLFATHER Metal Facemask",
+"set": "vip1",
+"setName": "Tracker",
+"code": "T",
+"id": "3820616006",
+"img": "https://images.steamusercontent.com/ugc/16405725691339336047/3E6C360E4264F2BD9A2A1F31E162B11D332B8FBE/"
+},
+{
+"item": "Pants",
+"short": "pants",
+"name": "ALLFATHER Pants",
+"set": "vip1",
+"setName": "Tracker",
+"code": "T",
+"id": "3820616508",
+"img": "https://images.steamusercontent.com/ugc/10033417323980178443/C6EF9A754441A3B3B0708B9016F6D8AC9F5AC0CD/"
+},
+{
+"item": "Tactical Gloves",
+"short": "tactical.gloves",
+"name": "ALLFATHER Tactical Gloves",
+"set": "vip1",
+"setName": "Tracker",
+"code": "T",
+"id": "3820616813",
+"img": "https://images.steamusercontent.com/ugc/15942022404669613852/AE77B2A375086F006B0AF9954F906D37C027F0D4/"
+},
+{
+"item": "Work Boots",
+"short": "shoes.boots",
+"name": "ALLFATHER Boots",
+"set": "vip1",
+"setName": "Tracker",
+"code": "T",
+"id": "3820616925",
+"img": "https://images.steamusercontent.com/ugc/9958533957516338817/5377448451B9142CEC5D16A9CA89A9484E7103F4/"
+},
+{
+"item": "Armored Door",
+"short": "door.hinged.toptier",
+"name": "Kalyna Lacquer — Armored Door",
+"set": "vip2",
+"setName": "Hound",
+"code": "H",
+"id": "3839051485",
+"img": "https://images.steamusercontent.com/ugc/16335284563380476703/553C9A4A14A0C037540F33BC9722652439C05610/"
+},
+{
+"item": "Hoodie",
+"short": "hoodie",
+"name": "ARES Hoodie",
+"set": "vip2",
+"setName": "Hound",
+"code": "H",
+"id": "3824400453",
+"img": "https://images.steamusercontent.com/ugc/17716537074834119021/0D229439C5F7F2C4BA6DAC0F3A067FB2805BA6FB/"
+},
+{
+"item": "Metal Chest Plate",
+"short": "metal.plate.torso",
+"name": "ARES Metal Chest Plate",
+"set": "vip2",
+"setName": "Hound",
+"code": "H",
+"id": "3824400321",
+"img": "https://images.steamusercontent.com/ugc/16129665519924575603/AF0005DB72EBF8D29D85F97A3B8F0AB59162EDF0/"
+},
+{
+"item": "Metal Facemask",
+"short": "metal.facemask",
+"name": "ARES Metal Facemask",
+"set": "vip2",
+"setName": "Hound",
+"code": "H",
+"id": "3824400180",
+"img": "https://images.steamusercontent.com/ugc/13922909652974264394/33E05E039B689D0E427CE63C5187D7ED1BEB49E8/"
+},
+{
+"item": "Pants",
+"short": "pants",
+"name": "ARES Pants",
+"set": "vip2",
+"setName": "Hound",
+"code": "H",
+"id": "3824400564",
+"img": "https://images.steamusercontent.com/ugc/15466483163732439198/92D3C245A9EFE9145C84BEC62AA362B7B6C5E6D7/"
+},
+{
+"item": "Tactical Gloves",
+"short": "tactical.gloves",
+"name": "ARES Tactical Gloves",
+"set": "vip2",
+"setName": "Hound",
+"code": "H",
+"id": "3824400835",
+"img": "https://images.steamusercontent.com/ugc/15998039092936861849/A040789C43C3E0685AB9C81D0D102441AFF11515/"
+},
+{
+"item": "Work Boots",
+"short": "shoes.boots",
+"name": "ARES Boots",
+"set": "vip2",
+"setName": "Hound",
+"code": "H",
+"id": "3824400941",
+"img": "https://images.steamusercontent.com/ugc/12858137324602777191/EE448E241A0A46DA0FFB9DDB2A0656073410AC80/"
+},
+{
+"item": "AK47",
+"short": "rifle.ak",
+"name": "GLADIATOR AK47",
+"set": "vip3",
+"setName": "Pack Leader",
+"code": "PL",
+"id": "3824277693",
+"img": "https://images.steamusercontent.com/ugc/17912011274273351238/E68DFD2BC0F7FD30F51EE0E1BD713F43A3814941/"
+},
+{
+"item": "AK47",
+"short": "rifle.ak",
+"name": "Toxic Spill Assault Rifle",
+"set": "vip3",
+"setName": "Pack Leader",
+"code": "PL",
+"id": "3820506476",
+"img": "https://images.steamusercontent.com/ugc/14210646198152500953/FC80854B8A376805ACF65AC1920CCD03F3EA44F8/"
+},
+{
+"item": "Chair",
+"short": "chair",
+"name": "Gilded Rosace — Chair",
+"set": "vip3",
+"setName": "Pack Leader",
+"code": "PL",
+"id": "3838494659",
+"img": "https://images.steamusercontent.com/ugc/13574936273296822724/BBFE09BB18F598E03A2A122265A07E36313A44A3/"
+},
+{
+"item": "Hoodie",
+"short": "hoodie",
+"name": "GLADIATOR Hoodie",
+"set": "vip3",
+"setName": "Pack Leader",
+"code": "PL",
+"id": "3824276923",
+"img": "https://images.steamusercontent.com/ugc/17716878006825252908/63F66F41D7C4E90910CF9A45F2CBF2D6BF1C7F98/"
+},
+{
+"item": "Hoodie",
+"short": "hoodie",
+"name": "Toxic Spill Hoodie",
+"set": "vip3",
+"setName": "Pack Leader",
+"code": "PL",
+"id": "3820506035",
+"img": "https://images.steamusercontent.com/ugc/13333228593062555882/B079DCFD90A57468757CC09625C3784CBEAAD4C6/"
+},
+{
+"item": "Metal Chest Plate",
+"short": "metal.plate.torso",
+"name": "GLADIATOR Metal Chest Plate",
+"set": "vip3",
+"setName": "Pack Leader",
+"code": "PL",
+"id": "3824276723",
+"img": "https://images.steamusercontent.com/ugc/12262782763229375810/BF728312040C8F5B10FC9A1C3906CA0966800377/"
+},
+{
+"item": "Metal Chest Plate",
+"short": "metal.plate.torso",
+"name": "Toxic Spill Metal Chest Plate",
+"set": "vip3",
+"setName": "Pack Leader",
+"code": "PL",
+"id": "3820505899",
+"img": "https://images.steamusercontent.com/ugc/16312907809344403491/A825905D8678A2C8D8C4061E523B02E667A25CEC/"
+},
+{
+"item": "Metal Facemask",
+"short": "metal.facemask",
+"name": "GLADIATOR Metal Facemask",
+"set": "vip3",
+"setName": "Pack Leader",
+"code": "PL",
+"id": "3824276556",
+"img": "https://images.steamusercontent.com/ugc/17881217550793505759/20411C862EFB4BB08CE827F66F68D453F25454EE/"
+},
+{
+"item": "Metal Facemask",
+"short": "metal.facemask",
+"name": "Toxic Spill Metal Facemask",
+"set": "vip3",
+"setName": "Pack Leader",
+"code": "PL",
+"id": "3820505808",
+"img": "https://images.steamusercontent.com/ugc/17975044053836303447/D114DC7AC20807DAE56FC0D5E88A8217E23E3B65/"
+},
+{
+"item": "Pants",
+"short": "pants",
+"name": "GLADIATOR Pants",
+"set": "vip3",
+"setName": "Pack Leader",
+"code": "PL",
+"id": "3824277064",
+"img": "https://images.steamusercontent.com/ugc/12933803740691112884/7A6D4FBBE745A28DE54DB8EBFF815654313146A4/"
+},
+{
+"item": "Pants",
+"short": "pants",
+"name": "Toxic Spill Pants",
+"set": "vip3",
+"setName": "Pack Leader",
+"code": "PL",
+"id": "3820506145",
+"img": "https://images.steamusercontent.com/ugc/17587157260846840537/17B2C3D8ED9E314C788C24B681CDB28162607292/"
+},
+{
+"item": "Tactical Gloves",
+"short": "tactical.gloves",
+"name": "GLADIATOR Tactical Gloves",
+"set": "vip3",
+"setName": "Pack Leader",
+"code": "PL",
+"id": "3824277399",
+"img": "https://images.steamusercontent.com/ugc/14145339287437240609/54CCF6E7EF5F6EF04FBC4E8C0A31E23BCD009A77/"
+},
+{
+"item": "Tactical Gloves",
+"short": "tactical.gloves",
+"name": "Toxic Spill Tactical Gloves",
+"set": "vip3",
+"setName": "Pack Leader",
+"code": "PL",
+"id": "3820506256",
+"img": "https://images.steamusercontent.com/ugc/14688019949530736258/E4F9C2777558B0A0A3CC6BADB19EA266BCF61307/"
+},
+{
+"item": "Work Boots",
+"short": "shoes.boots",
+"name": "GLADIATOR Boots",
+"set": "vip3",
+"setName": "Pack Leader",
+"code": "PL",
+"id": "3824277532",
+"img": "https://images.steamusercontent.com/ugc/15395870112916454920/C0B26104EED388BD0C688B537E3E39F1DD2CCC10/"
+},
+{
+"item": "Work Boots",
+"short": "shoes.boots",
+"name": "Toxic Spill Boots",
+"set": "vip3",
+"setName": "Pack Leader",
+"code": "PL",
+"id": "3820506370",
+"img": "https://images.steamusercontent.com/ugc/13432072691193159683/93F85C9C1BFC54078437C656B14993AD271B285A/"
+}
+]
+}
+</script>
+<!-- skins:data:end -->
+<script>
+(function(){
+  var data = JSON.parse(document.getElementById("skin-data").textContent);
+  var css = {free:"t-free", wastelander:"t-w", vip1:"t-t", vip2:"t-h", vip3:"t-pl"};
+  var state = {set:"", item:"", q:""};
+  var params = new URLSearchParams(location.search);
+  state.set = params.get("tier") || ""; state.item = params.get("item") || "";
+
+  function el(tag, cls, text){ var e = document.createElement(tag); if(cls) e.className = cls; if(text != null) e.textContent = text; return e; }
+  function badge(set){ return el("span", "tier " + (css[set.key] || ""), set.code); }
+
+  // Tier chips, with counts
+  var tiers = document.getElementById("tiers");
+  var all = [{key:"", name:"All tiers"}].concat(data.sets);
+  all.forEach(function(s){
+    var n = s.key ? data.skins.filter(function(k){ return k.set === s.key; }).length : data.skins.length;
+    var b = el("button", "chip"); b.type = "button"; b.dataset.set = s.key;
+    if (s.key) { b.appendChild(badge(s)); b.appendChild(document.createTextNode(" ")); }
+    b.appendChild(document.createTextNode(s.name + " (" + n + ")"));
+    b.addEventListener("click", function(){ state.set = s.key; render(); });
+    tiers.appendChild(b);
+  });
+
+  // Item types
+  var sel = document.getElementById("item");
+  Array.from(new Set(data.skins.map(function(k){ return k.item; }))).sort().forEach(function(i){
+    var o = el("option", null, i); o.value = i; sel.appendChild(o);
+  });
+  sel.value = state.item;
+  sel.addEventListener("change", function(){ state.item = sel.value; render(); });
+  var q = document.getElementById("q");
+  q.addEventListener("input", function(){ state.q = q.value.trim().toLowerCase(); render(); });
+
+  function render(){
+    tiers.querySelectorAll(".chip").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.set === state.set ? "true" : "false"); });
+    var list = data.skins.filter(function(k){
+      return (!state.set || k.set === state.set) && (!state.item || k.item === state.item)
+        && (!state.q || (k.name + " " + k.item).toLowerCase().indexOf(state.q) >= 0);
+    });
+    var grid = document.getElementById("skins"); grid.textContent = "";
+    list.forEach(function(k){
+      var set = data.sets.filter(function(s){ return s.key === k.set; })[0] || {key:k.set, code:k.code, name:k.setName};
+      var a = el("a", "card"); a.href = "https://steamcommunity.com/sharedfiles/filedetails/?id=" + k.id; a.rel = "noopener";
+      var t = el("div", "thumb");
+      if (k.img) { var img = el("img"); img.src = k.img; img.alt = k.name; img.loading = "lazy"; t.appendChild(img); }
+      else t.appendChild(el("span", null, "No picture yet"));
+      var m = el("div", "meta");
+      m.appendChild(el("b", null, k.name));
+      var line = el("small"); line.appendChild(badge(set)); line.appendChild(document.createTextNode(" " + k.item)); m.appendChild(line);
+      a.appendChild(t); a.appendChild(m); grid.appendChild(a);
+    });
+    document.getElementById("none").hidden = list.length > 0;
+    document.getElementById("count").textContent = list.length + " of " + data.skins.length + " skins";
+    var p = new URLSearchParams(); if (state.set) p.set("tier", state.set); if (state.item) p.set("item", state.item);
+    history.replaceState(null, "", location.pathname + (p.toString() ? "?" + p : ""));
+  }
+  render();
+})();
+</script>
+<script src="site.js"></script>
+</body></html>
