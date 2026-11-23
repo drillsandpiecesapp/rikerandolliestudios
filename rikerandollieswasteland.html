@@ -345,8 +345,8 @@ tr:last-child td{border-bottom:0}
 <ul>
   <li><b>Gather mode</b> per page: Off (default), All (everything you pick up goes in) or Same (only items already on that page).</li>
   <li><b>Use items</b> per page (Wastelander and VIP): items on that page count as if they were in your inventory for crafting, building, upgrades, hammer repairs, reloading and tool fuel. Off while PvP-active. Close <code>/bp</code> first: the game doesn't see backpack items while your backpack is open.</li>
-  <li><b>LOOT ALL</b> (above the page, or <code>/bp lootall</code>) moves everything on the page you see into your inventory: partial stacks first, then free slots, then your belt. If your inventory fills up, the rest stays in the backpack and chat says how many stacks are left. Works on locked pages too. <code>/bp lootall all</code> empties every page, <code>/bp lootall 2</code> just page 2.</li>
-  <li><b>TAKE MATCHING</b> (Wastelander and VIP, or <code>/bp take</code>) pulls items you already carry (same item and skin) from every page with Use items on. Pages with Use items off are left alone. Bind either to a key, e.g. <code>bind l robackpacks.lootall</code> or <code>bind k robackpacks.take</code>.</li>
+  <li><b>LOOT ALL</b> (<span class="tier t-h">H</span> <span class="tier t-pl">PL</span>; above the page, or <code>/bp lootall</code>) moves everything on the page you see into your inventory: partial stacks first, then free slots, then your belt. If your inventory fills up, the rest stays in the backpack and chat says how many stacks are left. Works on locked pages too. <code>/bp lootall all</code> empties every page, <code>/bp lootall 2</code> just page 2.</li>
+  <li><b>TAKE MATCHING</b> (<span class="tier t-h">H</span> <span class="tier t-pl">PL</span>; or <code>/bp take</code>) pulls items you already carry (same item and skin) from every page with Use items on. Pages with Use items off are left alone. Bind either to a key, e.g. <code>bind l robackpacks.lootall</code> or <code>bind k robackpacks.take</code>.</li>
   <li>The Backpack tab lists each page as Unlocked, Locked or Next tier, with its item count and both toggles.</li>
   <li><b>If VIP ends:</b> the extra pages stay saved but locked. You can take items out but not put new ones in. Nothing is deleted.</li>
   <li><code>/unload</code> takes the fuel out of the flamethrower or chainsaw you hold.</li>
@@ -406,6 +406,7 @@ tr:last-child td{border-bottom:0}
 <div class="tbl"><table><thead><tr><th>Perk</th><th><span class="tier t-free">Free</span></th><th><span class="tier t-w">W</span></th><th><span class="tier t-t">T</span></th><th><span class="tier t-h">H</span></th><th><span class="tier t-pl">PL</span></th></tr></thead><tbody>
 <tr><td>Backpack pages</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
 <tr><td>Use items from backpack</td><td>–</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+<tr><td>Backpack LOOT ALL and TAKE MATCHING</td><td>–</td><td>–</td><td>–</td><td>✓</td><td>✓</td></tr>
 <tr><td>Homes</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
 <tr><td><code>/home</code> cooldown / countdown</td><td>8 min / 10 s</td><td>6 min / 8 s</td><td>4 min / 6 s</td><td>3 min / 4 s</td><td>2 min / instant</td></tr>
 <tr><td><code>/tpr</code> cooldown</td><td>10 min</td><td>8 min</td><td>6 min</td><td>4 min</td><td>2 min</td></tr>
