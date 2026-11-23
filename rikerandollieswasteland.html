@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Riker &amp; Ollie's Wasteland: Server Wiki</title>
+<meta name="description" content="Player wiki for Riker &amp; Ollie's Wasteland, an unofficial PvE Rust community server: 15x rates, 150x stacks, no drops, monthly map wipes, zombies, bosses, raid bases, PawCoins, Treats, quests, Miles and Journeys.">
+<meta property="og:title" content="Riker &amp; Ollie's Wasteland: Server Wiki">
+<meta property="og:description" content="Everything in /menu, every command and how the server works. PvE, 15x, no drops, monthly wipes.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://rikerandolliestudios.com/img/pawcoin/pawcoin-512.png">
+<meta name="theme-color" content="#1A0A44">
+<link rel="icon" type="image/png" href="img/pawcoin/pawcoin-icon-64.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="stylesheet" href="studio.css"><link rel="stylesheet" href="theme.css"><script src="theme.js"></script>
+<style>
+html{scroll-padding-top:18px}
+.wiki .topbar{position:relative}
+.wiki .bar{grid-template-columns:auto 1fr}
+.wiki .topbar .mono{width:clamp(60px,8vw,84px);border-radius:50%}
+.wiki .topbar .cta{grid-column:2;margin:0}
+.layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:32px;align-items:start;padding-top:28px;padding-bottom:30px}
+.toc{position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto;background:var(--surface);border:1.5px solid var(--line);border-radius:22px;padding:14px 10px 14px 16px;-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);box-shadow:var(--card-shadow);font-size:.92rem}
+.toc summary{cursor:pointer;font-weight:800;list-style:none;padding:2px 0 6px}
+.toc summary::-webkit-details-marker{display:none}
+.toc ol{margin:0;padding:0 0 0 1.2em}
+.toc ol ol{padding-left:1em;margin:2px 0 4px;list-style:disc}
+.toc li{margin:3px 0;line-height:1.35}
+.toc a{text-decoration:none;color:var(--ink)}
+.toc a:hover,.toc a:focus-visible{text-decoration:underline;color:var(--brand)}
+.layout > main,article{min-width:0}
+article > section{padding:0;margin:0 0 22px;background:var(--surface);border:1.5px solid var(--line);border-radius:22px;padding:22px 24px 10px;-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);box-shadow:var(--card-shadow)}
+article h2{font-size:clamp(1.35rem,3vw,1.75rem);margin:0 0 10px;line-height:1.2}
+article h3{font-size:1.12rem;margin:22px 0 6px;line-height:1.3}
+article h4{font-size:1rem;margin:16px 0 4px}
+article p,article ul,article ol{margin:0 0 12px}
+article ul,article ol{padding-left:1.25em}
+article li{margin:0 0 6px}
+.anchor{margin-left:8px;font-size:.8em;opacity:0;text-decoration:none;color:var(--muted)}
+h2:hover .anchor,h3:hover .anchor,.anchor:focus-visible{opacity:1}
+code{font-family:Consolas,"Cascadia Mono","SFMono-Regular",Menlo,monospace;font-size:.88em;background:var(--soft);border:1px solid var(--line);padding:0 5px;border-radius:6px;white-space:nowrap}
+td code,li code{white-space:normal;overflow-wrap:anywhere}
+.tbl{overflow-x:auto;margin:0 0 14px;border:1px solid var(--line);border-radius:14px}
+table{border-collapse:collapse;width:100%;font-size:.93rem}
+th,td{text-align:left;padding:7px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--soft);font-weight:700;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.note{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:11px 15px;margin:0 0 14px;font-size:.95rem}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:4px 0 16px}
+.facts div{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:10px 14px}
+.facts b{display:block;font-size:1.05rem}
+.facts span{color:var(--muted);font-size:.9rem}
+.tier{display:inline-block;padding:0 8px;border-radius:999px;font-weight:800;font-size:.82rem;color:#1A0A44;line-height:1.6}
+.t-free{background:#d9d2ea}.t-w{background:#CD7F32}.t-t{background:#5BC0EB}.t-h{background:#B57EDC}.t-pl{background:#FFD700}
+.soon{color:var(--muted);font-style:italic}
+.chapters{columns:2;column-gap:28px;padding-left:1.6em}
+.chapters li{break-inside:avoid}
+.linkrow{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 14px}
+.placeholder{display:inline-block;line-height:1.6;padding:1px 12px;font-size:.8rem;border-radius:999px;font-weight:700;border:1.5px dashed var(--alt-line);color:var(--muted)}
+.top{display:inline-block;margin:4px 0 10px;font-size:.85rem}
+@media(max-width:900px){
+ .layout{grid-template-columns:1fr;gap:18px;padding-top:18px}
+ .toc{position:static;max-height:none}
+ .wiki .bar{grid-template-columns:1fr;padding-right:60px}
+ .wiki .topbar .cta{grid-column:1}
+}
+@media(max-width:560px){
+ article > section{padding:18px 16px 6px;border-radius:18px}
+ .chapters{columns:1}
+ .wrap{padding:0 16px}
+}
+</style>
+</head>
+<body class="studio wiki">
+<a class="skip" href="#content">Skip to the wiki</a>
+
+<header class="topbar"><div class="wrap bar">
+  <div class="brand-row"><img class="mono" src="img/pawcoin/pawcoin-512.png" alt="The PawCoin: a gold coin with a dog paw print" width="512" height="512"><h1>Riker &amp; Ollie's Wasteland</h1></div>
+  <p class="tag">Player wiki for our PvE Rust community server. Everything in <code>/menu</code>, every command, and how the server works.</p>
+  <div class="cta"><a class="btn small" href="https://discord.gg/56RntVw9sm" rel="noopener">Join the Discord</a><a class="btn alt small" href="#links">Store and vote links</a><a class="btn alt small" href="./">Studio home</a></div>
+</div></header>
+
+<div class="wrap layout">
+<nav class="toc" aria-label="Contents"><details open id="tocbox"><summary>Contents</summary>
+<ol>
+  <li><a href="#quick-start">Quick start</a></li>
+  <li><a href="#rules">Rules</a></li>
+  <li><a href="#wipes">Wipe schedule</a></li>
+  <li><a href="#no-drops">Death and drops</a></li>
+  <li><a href="#pvp-monument">PvP Monument</a></li>
+  <li><a href="#menu">The /menu</a>
+    <ol>
+      <li><a href="#info">Info</a></li>
+      <li><a href="#pawcoins">Wallet and PawCoins</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#treats">Treats, votes and titles</a></li>
+      <li><a href="#vip-tab">VIP</a></li>
+      <li><a href="#stats">Stats and leaderboards</a></li>
+      <li><a href="#skills">Skills: Grit and Miles</a></li>
+      <li><a href="#kits">Kits</a></li>
+      <li><a href="#backpack">Backpack</a></li>
+      <li><a href="#teleport">Teleport and homes</a></li>
+      <li><a href="#clans">Clan</a></li>
+      <li><a href="#quests">Quests and the story</a></li>
+    </ol></li>
+  <li><a href="#perks">Perks by tier</a></li>
+  <li><a href="#building">Building and base tools</a></li>
+  <li><a href="#qol">Quality of life</a></li>
+  <li><a href="#chat">Chat, PMs and Discord</a></li>
+  <li><a href="#town">Town and travel</a></li>
+  <li><a href="#raids">Raid bases</a></li>
+  <li><a href="#abandoned">Abandoned bases</a></li>
+  <li><a href="#islands">Private islands</a></li>
+  <li><a href="#oil-rigs">Oil rigs</a></li>
+  <li><a href="#bosses">Bosses and special weapons</a></li>
+  <li><a href="#zombies">Zombies</a></li>
+  <li><a href="#commands">All player commands</a></li>
+  <li><a href="#links">Links</a></li>
+</ol></details></nav>
+
+<main id="content"><article>
+
+<section id="quick-start"><h2>Quick start</h2>
+<div class="note"><b>Launching soon.</b> The server isn't open yet. The connect address, store and vote links will be added here at launch. Join the <a href="https://discord.gg/56RntVw9sm" rel="noopener">Discord</a> to hear first.</div>
+<div class="facts">
+  <div><b>PvE</b><span>Player damage is off everywhere except the PvP Monument</span></div>
+  <div><b>15x</b><span>Gather and loot</span></div>
+  <div><b>150x</b><span>Stack sizes</span></div>
+  <div><b>No drops</b><span>Everything you carry comes back when you respawn</span></div>
+  <div><b>Monthly</b><span>Map wipe, first Thursday of the month</span></div>
+  <div><b>Yearly</b><span>Progression wipe (Miles, Grit, Trades)</span></div>
+  <div><b>PawCoins and Treats</b><span>Two currencies, never wiped</span></div>
+  <div><b>US East</b><span>Region</span></div>
+</div>
+<h3 id="first-steps">Your first ten minutes</h3>
+<ol>
+  <li>Type <code>/menu</code> (or <code>/info</code>). Press F1 and type <code>bind f2 romenu.open</code> so F2 opens and closes the menu. Esc can't close it.</li>
+  <li>Read the <a href="#rules">rules</a>.</li>
+  <li>Claim your Starter kit: <code>/kit starter</code>, or the <a href="#kits">Kits</a> tab. You get it once per wipe.</li>
+  <li>Build a base, place a tool cupboard, and set a home with <code>/sethome base</code> while standing in it.</li>
+  <li>Earn PawCoins from zombies, raid bases, bosses, events and quests, and spend them in the <a href="#shop">Shop</a>.</li>
+  <li>Link your Discord with <code>/discord</code>, and vote once a day with <code>/vote</code> for Treats.</li>
+</ol>
+<p class="note">Riker &amp; Ollie's Wasteland is an unofficial community server run by Riker &amp; Ollie Studios. It is not affiliated with or endorsed by Facepunch Studios. Rust is a trademark of Facepunch Studios.</p>
+</section>
+
+<section id="rules"><h2>Rules</h2>
+<ol>
+  <li><b>Be respectful.</b> No harassment, threats, stalking or impersonation (including impersonating staff).</li>
+  <li><b>No hate.</b> No discriminatory language, names or signs.</li>
+  <li><b>No doxxing.</b> Never share anyone's personal info.</li>
+  <li><b>No cheating.</b> No hacks, scripts, macros or exploits. Report bugs instead.</li>
+  <li><b>No account sharing</b>, even with permission.</li>
+  <li><b>No advertising or spam</b>, including other servers.</li>
+  <li><b>Keep it family friendly.</b> Signs, names and chat must be age appropriate. Players must be 13+.</li>
+  <li><b>PvE means PvE.</b> No griefing, base blocking or loot stealing outside the PvP Monument.</li>
+  <li><b>Report</b> problems to staff in game or with a Discord ticket.</li>
+  <li><b>Chat and PMs are logged.</b> Admins can see private messages, to keep the community safe.</li>
+</ol>
+<p>Staff can warn, mute, kick or ban for breaking these.</p>
+</section>
+
+<section id="wipes"><h2>Wipe schedule</h2>
+<p><b>Map wipe:</b> monthly, on Facepunch's forced wipe (the first Thursday of the month). Blueprints wipe with the map. <b>Year Wipe:</b> once a year, after the yearly finale.</p>
+<div class="tbl"><table>
+<thead><tr><th>What</th><th>Monthly map wipe</th><th>Year Wipe</th></tr></thead>
+<tbody>
+<tr><td>Map, bases, blueprints, homes</td><td>Wiped</td><td>Wiped</td></tr>
+<tr><td>PawCoin wallet, Treats</td><td>Kept</td><td>Kept</td></tr>
+<tr><td>Backpack</td><td>Kept, except Tier 2+ gear (<a href="#backpack-wipe">details</a>)</td><td>Same as monthly</td></tr>
+<tr><td>Wastelander status, VIP</td><td>Kept</td><td>Kept</td></tr>
+<tr><td>Clans</td><td>Kept</td><td>Kept</td></tr>
+<tr><td>Grit and Miles</td><td>Kept</td><td>Reset</td></tr>
+<tr><td>Trades</td><td>Ranks 4 and 5 reset (points refunded); ranks 1 to 3 kept</td><td>All reset, Scrap Points too</td></tr>
+<tr><td>Journeys, badge, title, Year marks</td><td>Kept</td><td>Kept forever</td></tr>
+<tr><td>Story quests</td><td>Kept, and the next chapter opens</td><td>Back to Chapter 1</td></tr>
+<tr><td>Road Marker claims</td><td>Kept</td><td>Reset (cosmetic groups you earned stay)</td></tr>
+<tr><td>Kit cooldowns and uses</td><td>Reset</td><td>Reset</td></tr>
+<tr><td>Wipe stats</td><td>Reset (lifetime stats kept)</td><td>Same as monthly</td></tr>
+<tr><td>Private islands</td><td>Freed (unused deeds carry over)</td><td>Freed</td></tr>
+<tr><td>Image signs, <code>/rec</code> items kept for you</td><td>Cleared</td><td>Cleared</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="no-drops"><h2>Death and drops</h2>
+<ul>
+  <li><b>Nothing you carry ever drops.</b> When you die, your inventory, hotbar and clothing are saved and put back in the same slots when you respawn, with condition, ammo, skins and attachments. Your corpse is empty.</li>
+  <li>This works for sleepers too, and survives a server restart while you're dead.</li>
+  <li><b>The one exception:</b> at the <a href="#pvp-monument">PvP Monument</a>, the item in your hands drops when you die while PvP-active. Everything else is kept.</li>
+  <li>Your <a href="#backpack">backpack</a> never drops.</li>
+</ul>
+</section>
+
+<section id="pvp-monument"><h2>PvP Monument (Power Plant)</h2>
+<ul>
+  <li>The <b>Power Plant</b> is the PvP zone: 150 m around the monument. A red <b>PvP ZONE</b> banner shows while you're inside, and chat warns you as you enter and leave.</li>
+  <li>Damage counts only when <b>both</b> players are PvP-active. Nobody outside can shoot in, and nobody inside can shoot out at PvE players.</li>
+  <li><b>PvP timer:</b> after you leave the zone you stay PvP-active for 60 seconds, shown on screen. Going back in resets it. Logging out leaves a sleeper that's PvP-active until the timer ends.</li>
+  <li><b>Drops:</b> only the item in your hands drops on death. </li>
+  <li><b>Building:</b> only sleeping bags and beds can be placed in the zone.</li>
+  <li>While PvP-active: teleports, <code>/rec</code>, backpack "Use items", <code>/nv</code> and <code>/sunny</code> are off, and Fighter Trade damage doesn't apply.</li>
+  <li>Worth the risk: the zone has its own zombies and its own boss, the <b>Power Plant Overseer</b>.</li>
+</ul>
+</section>
+
+<section id="menu"><h2>The /menu</h2>
+<p>Open it with <code>/menu</code>, or bind a key: F1, then <code>bind f2 romenu.open</code> (press it again to close). The header shows your <b>PawCoins</b> and <b>Treats</b> live, and a <b>Theme</b> button that cycles Green, Gold and Rust (saved for you).</p>
+<p>Tabs, left to right: <b>Info · Wallet · Shop · VIP · Stats · Skills · Kits · Backpack · Teleport · Clan · Quests</b>. Many commands open a tab directly, such as <code>/vip</code>, <code>/stats</code>, <code>/grit</code>, <code>/kit</code>, <code>/homes</code>, <code>/clan</code> and <code>/quests</code>.</p>
+
+<h3 id="info">Info tab</h3>
+<p>Pages: <b>Welcome</b>, <b>Rules</b>, <b>Wipes</b>, <b>Commands</b> and <b>Perks</b> (both with Free, Wastelander, Tracker, Hound and Pack Leader tabs), and <b>Links</b> (copyable Discord, store and website links). It opens by itself on your first join, and again when the rules change.</p>
+<p>Shortcuts: <code>/info</code>, <code>/welcome</code>, <code>/rules</code>, <code>/wipe</code> (or <code>/wipes</code>), <code>/commands</code>, <code>/perks</code>, <code>/link</code> (or <code>/links</code>).</p>
+
+<h3 id="pawcoins">Wallet and PawCoins</h3>
+<p><b>PawCoins</b> are the server's money. The wallet is virtual: coins can't be dropped, stolen or lost, and they're never wiped. Check your balance with <code>/coins</code> (or <code>/pawcoins</code>, <code>/wallet</code>) or the Wallet tab.</p>
+<h4>How to earn them</h4>
+<div class="tbl"><table><thead><tr><th>Source</th><th>PawCoins</th></tr></thead><tbody>
+<tr><td>Zombies</td><td>A few per kill (1 at small monuments, more at bigger ones)</td></tr>
+<tr><td>Raid bases</td><td>Easy 50 · Medium 125 · Hard 250 · Nightmare 500, split among the raiders</td></tr>
+<tr><td>Bosses</td><td>A pool split by damage share among everyone with at least 5% of the damage (100 to 1,000 by tier)</td></tr>
+<tr><td>Events</td><td>Patrol heli, Bradley, Cargo Ship, hackable locked crates and airdrops</td></tr>
+<tr><td>Quests</td><td>Dailies 100–150, weeklies 500–750, plus story and special quests</td></tr>
+<tr><td>Road Markers</td><td>250 to 2,500 at some markers (<a href="#road-markers">see Skills</a>)</td></tr>
+</tbody></table></div>
+<p>Coins never come from AFK time or plain gathering.</p>
+<h4 id="pouches">PawCoin Pouches</h4>
+<p>The Wallet tab turns coins into <b>PawCoin Pouches</b> (100, 500 or 1,000, no fee): a gift box with the coin icon. Hand it to a friend, trade it, or keep it in a box. Right-click it and choose <b>Unwrap</b> to put the coins back in your wallet. Pouches also come from crates, bosses and events.</p>
+
+<h3 id="shop">Shop</h3>
+<ul>
+  <li>Categories on the left (Resources, Components, Medical, Ammo, Raid Bases, Titles and more), item cards on the right with x1, x5 and x10 buttons.</li>
+  <li>Every buy asks you to confirm, and checks your inventory has room before it charges you.</li>
+  <li>Some items have a <b>daily limit</b>, which resets at midnight UTC.</li>
+  <li><b>Raid Bases:</b> buy a raid base of any tier (<a href="#raids">see Raid bases</a>), with PawCoins or Treats.</li>
+  <li><b>Titles:</b> chat titles you buy with Treats.</li>
+  <li>Some categories are priced in <b>Treats</b> instead of PawCoins.</li>
+</ul>
+
+<h3 id="treats">Treats, votes and titles</h3>
+<p><b>Treats</b> are the second currency, earned only by voting for the server. Every player earns the same; VIP gives no bonus. Treats are never wiped.</p>
+<ul>
+  <li>Vote once every 24 hours on the server list site, then type <code>/vote</code> to collect (it also checks by itself 20 seconds after you join, and reminds you every hour when you can vote again).</li>
+  <li><b>1 Treat per vote</b>, plus <b>1 bonus Treat on every 7th vote in a row</b>. A vote within 48 hours of the last one keeps your streak.</li>
+  <li><code>/treats</code> shows your Treats, streak and when you can vote next.</li>
+</ul>
+<h4>Spending Treats</h4>
+<div class="tbl"><table><thead><tr><th>Title</th><th>Id</th><th>Price</th><th>Lasts</th></tr></thead><tbody>
+<tr><td>Good Pup</td><td><code>pup</code></td><td>3 Treats</td><td>7 days</td></tr>
+<tr><td>Howler</td><td><code>howler</code></td><td>5 Treats</td><td>7 days</td></tr>
+<tr><td>Bone Collector</td><td><code>tracker</code></td><td>8 Treats</td><td>14 days</td></tr>
+<tr><td>Alpha</td><td><code>alpha</code></td><td>12 Treats</td><td>14 days</td></tr>
+<tr><td>Wasteland Legend</td><td><code>legend</code></td><td>30 Treats</td><td>30 days</td></tr>
+</tbody></table></div>
+<p><code>/titles</code> lists them, <code>/title buy &lt;id&gt;</code> buys one (buying again adds time), <code>/title &lt;id&gt;</code> shows one you own, and <code>/title off</code> hides it. Titles also sit in the Shop's Titles category. Treats also buy Treat-priced shop items, some kits, and raid bases (Easy 3, Medium 6, Hard 12, Nightmare 25 Treats).</p>
+
+<h3 id="vip-tab">VIP tab</h3>
+<p><code>/vip</code> opens it. It shows your tier and end dates, a preview of your chat name, your <b>Wastelander progress bar</b> (30 hours of active play), the name colour picker (Hound and Pack Leader), VIP prices with the store link, and the full perks table. An ended VIP tier stays listed in grey for 14 days. See <a href="#perks">Perks by tier</a>.</p>
+
+<h3 id="stats">Stats and leaderboards</h3>
+<p><code>/stats</code> opens the Stats tab: your stats this wipe and lifetime on the left, a top-10 leaderboard on the right with a button per stat and a This wipe / Lifetime switch. Your row is highlighted and your rank shown. Other players' stats only show on leaderboards.</p>
+<p>Stats: zombies, NPCs, bosses, animals, PvP kills, raids cleared, deaths, resources gathered, items crafted, PawCoins earned and active play time. In chat: <code>/top &lt;stat&gt; [life]</code>, with <code>zombies</code>, <code>npcs</code>, <code>bosses</code>, <code>animals</code>, <code>pvp</code>, <code>raids</code>, <code>deaths</code>, <code>gathered</code>, <code>crafted</code>, <code>coins</code> or <code>playtime</code>.</p>
+
+<h3 id="skills">Skills: Grit, Miles and Journeys</h3>
+<p><code>/grit</code> (or <code>/skills</code>) opens the Skills tab. A switch at the bottom picks <b>Road</b>, <b>Markers</b>, <b>Trades</b> or <b>Hall of Fame</b>. We use our own words: <b>Grit</b> (experience), <b>Miles</b> (levels), <b>Journeys</b> (going round again), <b>Scrap Points</b> (skill points) and <b>Trades</b> (skill trees).</p>
+
+<h4 id="grit">Grit</h4>
+<p>You earn Grit only from things in the world: zombies, scientists and other NPCs, wild animals, bosses, raid bases, felling trees, finishing ore nodes, wild pickups, barrels and crates (first looter only). Nothing a player placed or owns pays Grit, and neither do crafting or recycling. A "+N Grit" popup shows next to your hotbar.</p>
+<ul>
+  <li><b>Same spot, less Grit:</b> farming one source in one place pays in full for the first 15 in 30 minutes, then less each time, down to a fifth.</li>
+  <li><b>AFK:</b> after 5 idle minutes the whole idle stretch earns nothing. Move, look around or do something.</li>
+</ul>
+
+<h4 id="miles">Miles</h4>
+<p>Miles run from 1 to 100 and come from your Grit. Early Miles come fast, later ones slower. A Mile never goes down. Every 10th Mile is announced to the server. <code>/grit me</code> gives a chat summary, and <code>/grit forecast</code> shows how long the road takes for casual, regular and hardcore players.</p>
+<p><b>Road gates:</b> at Miles 10, 25, 50 and 75 your Mile stops until you finish that gate's quest. Your Grit keeps counting, so the Miles catch up at once when it opens.</p>
+
+<h4 id="fatigue">Fatigue</h4>
+<p>Your Grit rate depends on how much you've actively played in the last 24 hours (a rolling window, kept through relogs and restarts). Chat warns you 10 minutes before a step down. It also scales Grit from bosses and raids.</p>
+<div class="tbl"><table><thead><tr><th>Active play, last 24 h</th><th>State</th><th>Grit rate</th></tr></thead><tbody>
+<tr><td>0–4 h</td><td>Fresh</td><td>100%</td></tr>
+<tr><td>4–5 h</td><td>Winded</td><td>75%</td></tr>
+<tr><td>5–6 h</td><td>Weary</td><td>50%</td></tr>
+<tr><td>6 h+</td><td>Exhausted</td><td>25%</td></tr>
+</tbody></table></div>
+<ul>
+  <li><b>Second Wind:</b> each hour offline gives 10 boosted minutes (up to 120). They give +50% Grit and are used only while you're Fresh.</li>
+  <li><b>Trailblazer:</b> players behind the server's average for the Year get bonus Grit while Fresh. The bonus grows through the Year, so late joiners can still catch up. Together with Second Wind it's capped at +200%.</li>
+</ul>
+
+<h4 id="journeys">Journeys</h4>
+<p>At Mile 100 you can start a <b>Journey</b>: finish the Journey trial quest, then press the button on the Skills tab or type <code>/grit journey confirm</code>. Your Miles go back to 1, your Journey count goes up, and the server hears about it. Your Trades and Scrap Points stay. There's no limit.</p>
+<p>Each Journey gives a coloured <b>J badge</b> in your chat tag and a title: J1 Drifter, J2 Wanderer, J3 Pathfinder, J4 Roadwarden, J5 Wayfarer, J6 Nomad, J7 Outrider, J8 Waste Walker, J9 Dust Prophet, J10 Legend of the Road, J15+ Myth of the Wastes. Journeys are lifetime: the Year Wipe keeps them. <code>/grit top</code> shows the leaderboard (most Journeys this Year, then Mile, then Year Grit).</p>
+
+<h4 id="trades">Trades</h4>
+<p><code>/trades</code> opens the Trades view. Spend <b>Scrap Points</b>, which come only from quests (story chapters, weekly bonuses and special quests). Five Trades with 5 ranks each; ranks cost 1, 1, 2, 2 and 3 points.</p>
+<div class="tbl"><table><thead><tr><th>Trade</th><th>Ranks 1–5</th></tr></thead><tbody>
+<tr><td>Gatherer</td><td>+5 / 10 / 15 / 22 / 30% yield from trees, ore, corpses and pickups. Rank 5: melee fells trees and ore in one hit</td></tr>
+<tr><td>Fighter</td><td>+5 / 10 / 15 / 22 / 30% damage to NPCs, zombies and bosses (not at the PvP Monument)</td></tr>
+<tr><td>Survivor</td><td>Less hunger and thirst and faster healing (10 / 20 / 30%). Ranks 4–5: 25% / 50% less cold and radiation damage</td></tr>
+<tr><td>Crafter</td><td>10–50% faster crafting, 10–50% less durability loss, none at rank 5</td></tr>
+<tr><td>Scavenger</td><td>+5 / 10 / 15 / 22 / 30% loot from barrels you break and crates you open first</td></tr>
+</tbody></table></div>
+<p>Ranks 4 and 5 reset at every map wipe and the points come back. One respec is free each map wipe, then 1,000 PawCoins each (<code>/trades respec</code>). Chat: <code>/trades list</code>, <code>/trades &lt;trade&gt;</code>.</p>
+
+<h4 id="road-markers">Road Markers</h4>
+<p><code>/road</code> opens the Markers view: yearly milestones on your <b>Year Grit</b> (which keeps counting across Journeys). Claim each by hand (<code>/road claim</code>, or Claim all on the tab).</p>
+<div class="tbl"><table><thead><tr><th>#</th><th>Marker</th><th>Year Grit</th><th>Reward</th></tr></thead><tbody>
+<tr><td>1</td><td>Mile Post</td><td>10,000</td><td>250 PawCoins</td></tr>
+<tr><td>2</td><td>Crossroads</td><td>25,000</td><td>3 Treats</td></tr>
+<tr><td>3</td><td>Rest Stop</td><td>50,000</td><td>500 PawCoins</td></tr>
+<tr><td>4</td><td>Old Bridge</td><td>100,000</td><td>5 Treats + a cosmetic unlock</td></tr>
+<tr><td>5</td><td>Dust Flats</td><td>175,000</td><td>1,000 PawCoins</td></tr>
+<tr><td>6</td><td>Toll Gate</td><td>250,000</td><td>8 Treats</td></tr>
+<tr><td>7</td><td>Watchtower</td><td>350,000</td><td>1,500 PawCoins</td></tr>
+<tr><td>8</td><td>Long Haul</td><td>500,000</td><td>12 Treats + a cosmetic unlock</td></tr>
+<tr><td>9</td><td>Far Ridge</td><td>750,000</td><td>2,500 PawCoins</td></tr>
+<tr><td>10</td><td>End of the Map</td><td>1,000,000</td><td>30 Treats + a cosmetic unlock</td></tr>
+</tbody></table></div>
+
+<h4 id="the-year">The Year, Year marks and the Hall of Fame</h4>
+<p>Monthly map wipes never touch Miles, Grit, Journeys or Trade ranks 1–3. Once a year the <b>Year Wipe</b> resets Miles, Grit, Trades and Scrap Points, and Year N+1 begins. You keep your Journeys, badge and title, Wastelander, backpack, wallet and cosmetics.</p>
+<p>Each past Year you played adds a <b>Year mark</b> (<code>•</code>) after your J badge in chat. The top 10 of each Year enter the <b>Hall of Fame</b>, and their mark for that Year turns gold. <code>/hof</code> (or <code>/halloffame</code>) opens the Hall of Fame view.</p>
+
+<h3 id="kits">Kits</h3>
+<p><code>/kit</code> opens the Kits tab: cards with each kit's items, cooldown and uses. A card says <b>Claim</b>, "Ready in 5h 2m", "Used this wipe", or why it's locked. <code>/kit &lt;name&gt;</code> claims in chat and <code>/kit list</code> lists them. Claims check your free slots first.</p>
+<div class="tbl"><table><thead><tr><th>Kit</th><th>Command</th><th>Who</th><th>Cooldown</th></tr></thead><tbody>
+<tr><td>Starter</td><td><code>/kit starter</code></td><td>Everyone</td><td>Once per wipe</td></tr>
+<tr><td>Food and meds</td><td><code>/kit food</code></td><td>Everyone</td><td>6 h</td></tr>
+<tr><td>Builder</td><td><code>/kit builder</code></td><td>Everyone</td><td>12 h</td></tr>
+<tr><td>Farmer</td><td><code>/kit farmer</code></td><td>Everyone</td><td>24 h</td></tr>
+<tr><td>Wastelander</td><td><code>/kit wastelander</code></td><td><span class="tier t-w">W</span> Wastelander</td><td>24 h</td></tr>
+</tbody></table></div>
+<p>Cooldowns and uses reset at each map wipe. Other kits can unlock at a Mile or Journey, after a quest, at a VIP tier (cosmetic only), or cost Treats. Whatever you can see in the Kits tab is what you can claim.</p>
+
+<h3 id="backpack">Backpack</h3>
+<p>Open it with <code>/bp</code>, the Backpack tab's <b>Open backpack</b> button, or a key (<code>bind b backpack.open</code>, press again to close). Each page holds <b>48 slots</b>; switch pages with the Prev and Next buttons.</p>
+<div class="tbl"><table><thead><tr><th>Tier</th><th>Pages</th><th>Slots</th></tr></thead><tbody>
+<tr><td><span class="tier t-free">Free</span></td><td>1</td><td>48</td></tr>
+<tr><td><span class="tier t-w">W</span> Wastelander</td><td>2</td><td>96</td></tr>
+<tr><td><span class="tier t-t">T</span> Tracker</td><td>3</td><td>144</td></tr>
+<tr><td><span class="tier t-h">H</span> Hound</td><td>4</td><td>192</td></tr>
+<tr><td><span class="tier t-pl">PL</span> Pack Leader</td><td>5</td><td>240</td></tr>
+</tbody></table></div>
+<ul>
+  <li><b>Gather mode</b> per page: Off (default), All (everything you pick up goes in) or Same (only items already on that page).</li>
+  <li><b>Use items</b> per page (Wastelander and VIP): items on that page count as if they were in your inventory for crafting, building, upgrades, hammer repairs, reloading and tool fuel. Off while PvP-active. Close <code>/bp</code> first: the game doesn't see backpack items while your backpack is open.</li>
+  <li>The Backpack tab lists each page as Unlocked, Locked or Next tier, with its item count and both toggles.</li>
+  <li><b>If VIP ends:</b> the extra pages stay saved but locked. You can take items out but not put new ones in. Nothing is deleted.</li>
+  <li><code>/unload</code> takes the fuel out of the flamethrower or chainsaw you hold.</li>
+</ul>
+<h4 id="backpack-wipe">What a map wipe removes from backpacks</h4>
+<p>At each map wipe, <b>Tier 2 and Tier 3 gear</b> is removed: anything needing a Tier 2+ workbench in the Weapon, Ammunition, Attire, Tool and Traps categories, plus the M249. Attachments are checked on their own. <b>Everything else stays:</b> resources, components, Tier 1 gear, meds, deployables, electrical and building items. Wearable backpacks, parachutes, mannequins, horse shoes and survey charges are never removed. Your first login after a wipe lists what was removed.</p>
+
+<h3 id="teleport">Teleport and homes</h3>
+<p><code>/homes</code> opens the Teleport tab: your homes, today's teleports and cooldowns.</p>
+<ul>
+  <li><code>/sethome &lt;name&gt;</code> sets a home where you stand. You need to be authorized on the TC there, and it's one home per TC (<code>/sethome</code> with the same name moves it). <code>/home &lt;name&gt;</code> goes there, <code>/delhome &lt;name&gt;</code> deletes it. A home goes if its TC is destroyed or you lose authorization.</li>
+  <li><code>/tpr &lt;name&gt;</code> asks to teleport to a player; they type <code>/tpa</code> to accept or <code>/tpc</code> to deny (also cancels yours). Requests last 30 seconds. <code>/tpauto off|team|all</code> auto-accepts requests.</li>
+</ul>
+<div class="tbl"><table><thead><tr><th></th><th>Homes</th><th><code>/home</code> cooldown</th><th>Countdown</th><th><code>/tpr</code> cooldown</th><th>Teleports a day</th></tr></thead><tbody>
+<tr><td><span class="tier t-free">Free</span></td><td>2</td><td>8 min</td><td>10 s</td><td>10 min</td><td>10</td></tr>
+<tr><td><span class="tier t-w">W</span> Wastelander</td><td>3</td><td>6 min</td><td>8 s</td><td>8 min</td><td>15</td></tr>
+<tr><td><span class="tier t-t">T</span> Tracker</td><td>4</td><td>4 min</td><td>6 s</td><td>6 min</td><td>20</td></tr>
+<tr><td><span class="tier t-h">H</span> Hound</td><td>5</td><td>3 min</td><td>4 s</td><td>4 min</td><td>30</td></tr>
+<tr><td><span class="tier t-pl">PL</span> Pack Leader</td><td>6</td><td>2 min</td><td>Instant</td><td>2 min</td><td>50</td></tr>
+</tbody></table></div>
+<p>The daily count covers <code>/home</code> and <code>/tpr</code> together. A Wastelander with VIP gets the best of both. Teleports are free.</p>
+<p><b>When you can't teleport:</b> while PvP-active, for 15 seconds after taking damage (damage during the countdown cancels it, and so does moving 2 m), inside an active raid zone, and while mounted, swimming, falling, downed, on the Cargo Ship or building-blocked. <code>/town</code>, <code>/outpost</code> and <code>/bandit</code> are in <a href="#town">Town and travel</a>.</p>
+
+<h3 id="clans">Clan</h3>
+<p><code>/clan</code> opens the Clan tab. Every clan is a Rust team, so clanmates count as teammates everywhere: base access, raids, islands, team chat, the team UI and map markers. Your <code>[TAG]</code> shows in chat.</p>
+<ul>
+  <li><code>/clan create &lt;TAG&gt; &lt;name&gt;</code>: tag 2–5 letters or numbers (unique), name up to 24 characters. Up to 8 members.</li>
+  <li><code>/clan invite &lt;player&gt;</code> (invites last 5 minutes), <code>/clan accept [TAG]</code>, <code>/clan deny</code>, <code>/clan leave</code>.</li>
+  <li><code>/clan kick</code>, <code>/clan promote</code>, <code>/clan demote</code>, <code>/clan leader &lt;player&gt;</code> (hand over), <code>/clan disband &lt;TAG&gt;</code>.</li>
+  <li><code>/clan info &lt;TAG&gt;</code>, <code>/clan list</code>, and <code>/c &lt;message&gt;</code> for clan chat.</li>
+  <li><b>Roles:</b> the leader does everything; officers invite and kick plain members. If the leader leaves, the longest-serving officer takes over (else the longest-serving member).</li>
+  <li>Rust's own team buttons work too: they're redirected to the clan.</li>
+  <li><b>Clans are kept through map wipes.</b></li>
+</ul>
+<p>On the tab, without a clan you get a create box, your invites and the clan list. In a clan you see members with online dots and roles, buttons for your role, an online-player list to invite from (leaders and officers), a clan chat box and Leave.</p>
+
+<h3 id="quests">Quests and the story</h3>
+<p><code>/quests</code> (or <code>/q</code>) opens the Quests tab: your quests, dailies, weeklies, quests you can take, road gates, the Journey trial and the story chapters, with a detail panel and Take, Hand in, Pin and Drop buttons.</p>
+<ul>
+  <li><b>Dailies and weeklies:</b> you get 3 of each, picked for you. Dailies reset at 00:00 UTC, weeklies on Monday 00:00 UTC. Finishing all three weeklies pays a bonus Scrap Point and Grit.</li>
+  <li><b>Quest types:</b> kill zombies, scientists, animals or a boss, finish raid bases, gather, craft, loot crates and barrels, visit monuments, and deliver items.</li>
+  <li><b>Rewards:</b> PawCoins, Grit (fixed, not affected by fatigue), Scrap Points, items and unlocks.</li>
+  <li><b>Tracker:</b> up to 3 quests on screen, under the HUD in the top right. <code>/tracker</code> hides or shows it, <code>/quests track &lt;id&gt;</code> pins one, or bind a key: <code>bind &lt;key&gt; roquests.tracker</code>.</li>
+  <li><b>Quest givers:</b> the <b>Quartermaster</b> stands next to the <code>/town</code> arrival point. Press E on a quest giver to see what they offer. Some quests must be taken and handed in there.</li>
+  <li>Chat: <code>/quests daily</code>, <code>weekly</code>, <code>list</code>, <code>info &lt;id&gt;</code>, <code>take &lt;id&gt;</code>, <code>drop &lt;id&gt;</code>, <code>turnin &lt;id&gt;</code>, <code>chat</code>.</li>
+</ul>
+<h4 id="story">The 12-chapter story</h4>
+<p>One chapter opens each map wipe, so the story runs across the Year. Chapters go in order, so if you miss a month you can catch up. Finishing a chapter pays Scrap Points and is announced. Map wipes never reset story progress; the Year Wipe starts it again from Chapter 1.</p>
+<ol class="chapters">
+  <li>Dust and Bones</li><li>The Long Road</li><li>Ashes of the Old Town</li><li>Signals</li><li>The Dead Tide</li><li>Iron and Rust</li>
+  <li>The Warden's Shadow</li><li>Static</li><li>Drowned Lights</li><li>The Last Convoy</li><li>Embers</li><li>End of the Map</li>
+</ol>
+</section>
+
+<section id="perks"><h2>Perks by tier</h2>
+<p>There are five tiers. <b>Wastelander</b> is earned with 30 hours of active play: it's never sold and never expires. <b>Tracker</b>, <b>Hound</b> and <b>Pack Leader</b> are paid VIP from the store, and they're <b>cosmetic or convenience only</b>: no gear, no gather or Grit boosts. VIP doesn't include Wastelander perks; everyone earns those the same way. A player who has both gets both.</p>
+<div class="tbl"><table><thead><tr><th>Perk</th><th><span class="tier t-free">Free</span></th><th><span class="tier t-w">W</span></th><th><span class="tier t-t">T</span></th><th><span class="tier t-h">H</span></th><th><span class="tier t-pl">PL</span></th></tr></thead><tbody>
+<tr><td>Backpack pages</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+<tr><td>Use items from backpack</td><td>–</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+<tr><td>Homes</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+<tr><td><code>/home</code> cooldown / countdown</td><td>8 min / 10 s</td><td>6 min / 8 s</td><td>4 min / 6 s</td><td>3 min / 4 s</td><td>2 min / instant</td></tr>
+<tr><td><code>/tpr</code> cooldown</td><td>10 min</td><td>8 min</td><td>6 min</td><td>4 min</td><td>2 min</td></tr>
+<tr><td>Teleports a day</td><td>10</td><td>15</td><td>20</td><td>30</td><td>50</td></tr>
+<tr><td>Stacking chests (<code>/stack</code>)</td><td>–</td><td>2 high</td><td>2 high</td><td>3 high</td><td>4 high</td></tr>
+<tr><td>Chat code</td><td>–</td><td>W</td><td>T, sky-blue name</td><td>H, pick a name colour</td><td>PL, two-colour gradient name</td></tr>
+<tr><td>Wastelander kit</td><td>–</td><td>✓</td><td>–</td><td>–</td><td>–</td></tr>
+<tr><td>Floating foundations (<code>/float</code>)</td><td>–</td><td>✓</td><td>–</td><td>–</td><td>–</td></tr>
+<tr><td>Personal recycler, 2× speed (<code>/rec</code>)</td><td>–</td><td>✓</td><td>–</td><td>–</td><td>–</td></tr>
+<tr><td>Queue skip</td><td>–</td><td>–</td><td>✓</td><td>✓</td><td>✓</td></tr>
+<tr><td>Image signs (<code>/sil</code>)</td><td>–</td><td>–</td><td>–</td><td>5</td><td>10</td></tr>
+<tr><td>Send to boxes (<code>/send</code>), furnace splitter</td><td>–</td><td>–</td><td>–</td><td>–</td><td>✓</td></tr>
+<tr><td>Discord role and colour</td><td>–</td><td>Wastelander role</td><td>✓</td><td>✓</td><td>✓, shown above all</td></tr>
+</tbody></table></div>
+<p><b>Everyone (Free)</b> also gets: no drops, the wallet and shop, free kits, Town/Outpost/Bandit teleports, clans, every building tool (remove with refund, auto-upgrade, whole-base upgrade and repair, workbench range over your base, powerless CCTV and turrets, indoor large furnaces), free code locks, <code>/sort</code>, auto-sort and <code>/autodoor</code>, <code>/nv</code> and <code>/sunny</code>, and placeable Recycler items.</p>
+<p class="soon">Coming soon: skin box (free Workshop skins, more sets with each tier), virtual quarry and refinery, vehicle garage, basements (Wastelander), coloured lanterns and lights, a VIP Discord channel, and a custom title for Pack Leader.</p>
+<h3 id="vip-prices">VIP prices</h3>
+<div class="tbl"><table><thead><tr><th>Tier</th><th>One month (30 days)</th><th>Monthly subscription</th><th>Lifetime</th></tr></thead><tbody>
+<tr><td><span class="tier t-t">T</span> Tracker</td><td>$6.99</td><td>$4.99</td><td>$49.99</td></tr>
+<tr><td><span class="tier t-h">H</span> Hound</td><td>$12.99</td><td>$9.99</td><td>$89.99</td></tr>
+<tr><td><span class="tier t-pl">PL</span> Pack Leader</td><td>$18.99</td><td>$14.99</td><td>$129.99</td></tr>
+</tbody></table></div>
+<p>Lifetime means for the life of the server, and isn't transferable. When a paid tier ends you get a chat notice, and extra backpack pages lock (nothing is deleted). Name colours: <code>/namecolor #hex</code> (Hound), <code>/namecolor #hex #hex2</code> (Pack Leader), <code>/namecolor reset</code>, or the swatches on the VIP tab.</p>
+</section>
+
+<section id="building"><h2>Building and base tools</h2>
+<h3 id="remove">Remove and auto-upgrade</h3>
+<ul>
+  <li><code>/remove</code> turns remove mode on for 60 seconds (a red bar shows the time; each removal resets it). Hit your own or your clan's blocks and deployables with a <b>hammer</b>. Blocks refund their grade's cost; deployables and locks come back as items. Boxes must be empty, and nothing hit in the last 30 seconds can be removed. Not in raid zones or while PvP-active.</li>
+  <li><code>/bgrade 1-4</code> (1 wood, 2 stone, 3 metal, 4 HQM, <code>0</code> off): every block you place is upgraded at once, paid from your inventory.</li>
+</ul>
+<h3 id="tc-panel">TC panel (BASE TOOLS)</h3>
+<p>Open your tool cupboard and a <b>BASE TOOLS</b> panel shows in the top right:</p>
+<ul>
+  <li><b>Upgrade the whole base</b> to Wood, Stone, Metal or HQM. The first click shows the block count and cost; click again within 15 seconds to confirm. It pays from the TC's resources first, then your inventory, and stops when you run out.</li>
+  <li><b>Skin button</b> under each grade cycles through the building skins <i>you own</i> (never DLC you don't have). <b>Floors</b>: All, 1, 2, 3 or 4+.</li>
+  <li><b>Mode: Downgrade</b> brings blocks down to Twig, Wood, Stone or Metal. Free, with no refund.</li>
+  <li><b>Repair all</b>: repairs everything as far as your resources allow, per resource. Things hit in the last 30 seconds are skipped.</li>
+  <li><b>Show range</b>: draws the TC's building-privilege area on the ground, only for you (or <code>/tcrange</code>). It turns off after 5 minutes.</li>
+</ul>
+<p>Chat versions: <code>/bup 1-4 [floor]</code>, <code>/bdown 0-3 [floor]</code>, <code>/brepair</code> (stand in your base).</p>
+<h3 id="locks">Free code locks</h3>
+<ul>
+  <li>Every door and box you place starts with a free lock for your <b>clan</b>. Nobody is told the code, and it can't be picked up.</li>
+  <li><code>/lock</code> adds a free lock to an existing door or box (or removes yours). <code>/lock private</code> = only you, <code>/lock clan</code> = you and your clan. A <b>LOCK</b> panel with the same choices shows when you open your box.</li>
+</ul>
+<h3 id="base-extras">More base tools</h3>
+<ul>
+  <li><b>Workbench range:</b> anywhere in a TC area you're authorized on, you get the level of the best workbench in that building, through walls.</li>
+  <li><b>No power needed</b> for CCTV cameras, computer stations and auto turrets you place. Turrets start <b>off</b> (Rust only lets you authorize and load them while off): look at one and type <code>/turret</code> to switch it on or off.</li>
+  <li><b>Large furnaces indoors:</b> hold one and right-click the floor or a foundation inside your base. It needs room for the whole furnace.</li>
+  <li><b>Stacking chests</b> (Wastelander and VIP): hold a wooden box and right-click your box of the same kind, or look at it and type <code>/stack</code>. Heights by tier are in <a href="#perks">Perks</a>.</li>
+  <li><b>Floating foundations</b> (Wastelander): look at the sea (at least 0.5 m deep) and type <code>/float</code> for a foundation 1 m above the water. Look at its side and <code>/float</code> again for the next one. Costs a twig foundation; then upgrade as usual. Not in Town, raid zones, monuments or someone else's island.</li>
+  <li><b>TC limit:</b> 5 tool cupboards per team (a solo player is a team of one). <code>/tcs</code> lists your team's TCs.</li>
+  <li><b>Recycler item:</b> place it in your base like any deployable (max 2 per player, 1 per base). Pick it up with <code>/rec pickup</code> or two hammer hits.</li>
+</ul>
+</section>
+
+<section id="qol"><h2>Quality of life</h2>
+<h3 id="sort">Sorting, sending and doors</h3>
+<p>A button row shows under the loot panel when you open a box.</p>
+<ul>
+  <li><code>/sort</code> (or <b>SORT</b>) sorts the box you have open: stacks merged, then by category and name. Works on boxes, stashes, fridges, coffins and backpack pages.</li>
+  <li><code>/autosort on|off</code> (or <b>AUTO-SORT</b>) sorts boxes and backpack pages when you close them.</li>
+  <li><code>/send</code> (<span class="tier t-pl">PL</span>, or <b>SEND TO BOXES</b>) puts items from your inventory and backpack into boxes within 20 m that already hold that item. <code>/send inv</code> or <code>/send bp</code> for one of them. <code>/send keep 2</code> keeps backpack page 2 out of it (or the <b>PAGE</b> button under that page).</li>
+  <li><code>/splitter on|off</code> (<span class="tier t-pl">PL</span>): ore you put in a furnace or refinery spreads over the slots. The panel under it shows the smelt time and wood needed, and <b>ADD WOOD</b> tops up the fuel.</li>
+  <li><code>/autodoor on|off</code>: doors you open close again after 5 seconds (<code>/autodoor 2-60</code> picks the seconds; <code>/autodoor this</code> stops it for the door you look at).</li>
+  <li><code>/qol</code> shows these commands and your settings.</li>
+</ul>
+<h3 id="rec">Personal recycler</h3>
+<p><code>/rec</code> (<span class="tier t-w">W</span> Wastelander) opens a recycler anywhere at <b>2× speed</b>. Closing it gives everything back; if your inventory is full, the rest waits in the recycler for next time. Not while PvP-active, at the PvP Monument or in raid zones. <code>/rec help</code> explains it.</p>
+<h3 id="sil">Image signs</h3>
+<p><code>/sil &lt;url&gt;</code> (<span class="tier t-h">H</span> 5 signs, <span class="tier t-pl">PL</span> 10) paints a PNG or JPG from the web on the picture frame, sign or banner you look at. <code>/sil &lt;url&gt; raw</code> fits the whole image instead of cropping it, a number picks the frame on multi-frame neon signs, and <code>/sil clear</code> removes yours and frees the slot. Only signs you could paint yourself; 30-second cooldown. Every image is logged for staff, and the rules apply (family friendly).</p>
+<h3 id="hud">HUD and tracker</h3>
+<ul>
+  <li>The <b>HUD</b> in the top right shows your map grid and monument, the weather and temperature, and event chips: <b>Cargo</b>, <b>Lg Rig</b>, <b>Sm Rig</b> (green while that rig's locked crate is waiting) and <b>Heli</b>. <code>/hud</code> hides or shows it.</li>
+  <li>The <a href="#quests">quest tracker</a> sits under it. <code>/tracker</code> hides or shows it.</li>
+</ul>
+<h3 id="nv">Night vision and clear weather</h3>
+<ul>
+  <li><code>/nv</code> gives <i>you</i> daylight; <code>/nv &lt;hour&gt;</code> picks the time (for example <code>/nv 10</code>). The server's night still happens, and zombies still get their night boost.</li>
+  <li><code>/sunny</code> clears the weather just for you: no rain, fog, clouds or storms.</li>
+  <li>Both switch off at the PvP Monument and during the PvP timer, and come back after.</li>
+</ul>
+</section>
+
+<section id="chat"><h2>Chat, PMs and Discord</h2>
+<p>Chat names look like <code>[W|PL] [Good Pup] [TAG] Name: hi</code>: your tier codes (plus staff titles, your J badge and Year marks), your Treat title, a <code>[Booster]</code> tag for Discord boosters, and your clan tag.</p>
+<ul>
+  <li><code>/pm &lt;name&gt; &lt;message&gt;</code> sends a private message; <code>/r &lt;message&gt;</code> replies to your last one.</li>
+  <li><code>/ignore &lt;name&gt;</code> ignores or unignores someone (their PMs and chat are hidden from you); <code>/ignore list</code>. Staff can't be ignored.</li>
+  <li><code>/c &lt;message&gt;</code> is clan chat.</li>
+  <li><b>Chat and PMs are logged</b>, and staff can read PMs in a private Discord channel, to keep the community safe.</li>
+</ul>
+<h3 id="discord-link">Linking your Discord</h3>
+<ol>
+  <li>Join the <a href="https://discord.gg/56RntVw9sm" rel="noopener">Discord</a>.</li>
+  <li>Type <code>/discord</code> in game. You get a 6-letter code (valid 10 minutes).</li>
+  <li>Post just the code in <b>#how-to-link</b>. The bot links your accounts and deletes the message.</li>
+</ol>
+<p>Linking gives you the Linked role, syncs your Wastelander and VIP roles, and gives Server Boosters a <code>[Booster]</code> tag in game. <code>/discord unlink</code> undoes it. Global chat is shared both ways with the Discord's in-game chat channel.</p>
+</section>
+
+<section id="town"><h2>Town and travel</h2>
+<ul>
+  <li><b>Town</b> is the market: a safe zone on its own island, under a blue dome, with server shops. Nothing can damage players or things inside, and only staff build there. It's marked on the map ("Town: safe zone").</li>
+  <li><code>/town</code> (or <code>/market</code>) teleports you there: 10-second countdown, 15-minute cooldown, free.</li>
+  <li><code>/outpost</code> and <code>/bandit</code> teleport you to Outpost and Bandit Camp, with the same countdown and cooldown. You arrive at a random safe spot.</li>
+  <li>The same <a href="#teleport">teleport blocks</a> apply.</li>
+  <li>The <b>Quartermaster</b> quest giver waits next to the Town arrival point.</li>
+</ul>
+<p class="soon">Coming soon: rentable player stalls and PawCoin shops at the market.</p>
+</section>
+
+<section id="raids"><h2>Raid bases</h2>
+<p>NPC-guarded bases spawn on flat land around the map, away from Town, islands, monuments and player bases. Each has a grey dome, a coloured map circle with a label, and a banner under the compass showing tier, owner, loot left, guards left and the countdown.</p>
+<div class="tbl"><table><thead><tr><th>Tier</th><th>Building</th><th>Buy price</th><th>Payout</th></tr></thead><tbody>
+<tr><td>Easy</td><td>2x2 wood, wood ring wall</td><td>100 PawCoins or 3 Treats</td><td>50</td></tr>
+<tr><td>Medium</td><td>3x3 stone, 2 storeys</td><td>250 PawCoins or 6 Treats</td><td>125</td></tr>
+<tr><td>Hard</td><td>3x3 metal with a core room, 2 auto turrets</td><td>500 PawCoins or 12 Treats</td><td>250</td></tr>
+<tr><td>Nightmare</td><td>5x5 armored with a core room, 4 auto turrets</td><td>1,000 PawCoins or 25 Treats</td><td>500</td></tr>
+</tbody></table></div>
+<ul>
+  <li><b>Free bases</b> (Easy and Medium) spawn on their own, more with more players online. The <b>first player to hit or loot one claims it</b>.</li>
+  <li><b>Bought raids:</b> <code>/buyraid &lt;tier&gt;</code> (add <code>treats</code> to pay in Treats), or the Shop's Raid Bases category. One bought raid per player at a time; refunded if it can't spawn.</li>
+  <li>The owner, their clan and anyone they <code>/inviteraid &lt;player&gt;</code> can damage the base and guards, loot and build there. Everyone else is blocked.</li>
+  <li>Inside: code-locked doors to break, scientists on guard (some posted at windows and on the roof), zombies, loot boxes and a TC full of resources that raiders are authorized on, so you can place ladders and barricades.</li>
+  <li><b>Timers:</b> 30 minutes to start; once started, no limit while a raider stays within 100 m, but it's abandoned after 10 minutes with nobody near. It despawns 2 minutes after the last box is emptied.</li>
+  <li><b>Payout</b> is split evenly among the raiders nearby when the loot is cleared.</li>
+  <li><code>/raids</code> lists the raid bases on the map.</li>
+</ul>
+</section>
+
+<section id="abandoned"><h2>Abandoned bases</h2>
+<ul>
+  <li>If nobody who keeps a base alive (the TC owner, their clan, and anyone authorized on the TC) logs in for <b>5 days</b>, the base becomes a <b>PvE raidable base</b>. Warnings go out on day 3 and day 4 (in Discord, and by DM if you linked your account).</li>
+  <li>It gets a purple map marker. <code>/abandoned</code> lists them with their claim status.</li>
+  <li><b>The first raider claims it</b> (damage, loot or authorize on its TC) for themselves, their clan and anyone they <code>/inviteraid</code>. The claim drops after 10 minutes with no claimer within 100 m.</li>
+  <li><b>The old locks stay locked</b>, so raiders break in like a real raid. Everything inside is loot (backpacks are safe anyway).</li>
+  <li>If an owner logs back in, the base is protected again.</li>
+</ul>
+</section>
+
+<section id="islands"><h2>Private islands</h2>
+<p>A few private islands (such as Riker's Rock, Ollie's Isle and Paw Print Cay) are build spots for the whole wipe. Each has a bubble around it and a map marker: green = free, purple = claimed.</p>
+<ul>
+  <li>Get an <b>Island Deed</b> from the store <span class="soon">(coming soon)</span>, then <code>/island claim [number]</code> on a free island. If all are taken, the deed waits for the next wipe.</li>
+  <li>One per clan. Islands are freed at every map wipe; an unused deed carries over.</li>
+  <li>The owner's clan is allowed automatically. <code>/island invite &lt;name&gt;</code> and <code>/island kick &lt;name&gt;</code> add or remove others; <code>/island admin &lt;name&gt;</code> lets a clanmate invite and kick (<code>/island unadmin</code>).</li>
+  <li><b>Unlocked:</b> anyone can visit, but only allowed players can build, loot, use doors and boxes, or deal damage. <b>Locked</b> (<code>/island lock</code>, a toggle): outsiders are kept out of the bubble, boats and minicopters included.</li>
+  <li><code>/island</code> shows your status, <code>/island list</code> every island.</li>
+</ul>
+</section>
+
+<section id="oil-rigs"><h2>Oil rigs</h2>
+<ul>
+  <li>The player who starts the locked-crate hack at the Large Oil Rig or the Oil Rig gets that rig for <b>their team</b> while the crate hacks and for <b>5 minutes after it opens</b>. A purple dome shows while it's locked.</li>
+  <li>Anyone else is pushed out past the edge (boats and helis too) and told whose rig it is.</li>
+  <li>The HUD's rig chips are green while a fresh crate is waiting, and go grey once someone starts hacking it. Rig, Cargo Ship and Patrol Heli events are also posted in the Discord.</li>
+</ul>
+</section>
+
+<section id="bosses"><h2>Bosses and special weapons</h2>
+<div class="tbl"><table><thead><tr><th>Boss</th><th>Where</th><th>Respawn</th></tr></thead><tbody>
+<tr><td>Tier 1: Rotting Brute</td><td>Mid-size monuments</td><td>About every 30 min ± 30 min</td></tr>
+<tr><td>Tier 2: Bloated Horror</td><td>Large monuments</td><td>About every hour ± 30 min</td></tr>
+<tr><td>Tier 3: Rad Commander</td><td>Its arena (or large monuments)</td><td>About every 3 h ± 30 min</td></tr>
+<tr><td>Tier 4: The Warden</td><td>The finale arena</td><td>About every 6 h ± 30 min</td></tr>
+<tr><td>Power Plant Overseer</td><td>The PvP Monument</td><td>About every 2 h ± 30 min</td></tr>
+<tr><td>Mega Zombie</td><td>Anywhere, with no announcement</td><td>Rare, about 1–2 a day</td></tr>
+</tbody></table></div>
+<ul>
+  <li>When a boss appears there's a chat announcement, a map marker and a health bar for players nearby. Respawn times are random within the window, so they can't be timed. Bosses bring minion zombies.</li>
+  <li><b>Loot:</b> the player who did the most damage gets the body to loot (it stays 15 minutes). The top damagers are told their rank.</li>
+  <li><b>PawCoins:</b> a pool split by damage share among everyone with at least 5% of the damage.</li>
+  <li><b>The Fish Pistol</b> can drop from Tier 3, Tier 4, the Mega Zombie and the Overseer, for the top damager.</li>
+</ul>
+<h3 id="fish-pistol">The Fish Pistol</h3>
+<p>A boss-only special weapon that fires a fish like a rocket, exploding on impact. <b>HV Fish</b> (small and medium fish) fly fast and flat; <b>Rocket Fish</b> (large fish) arc and hit hard. It has two 10-fish magazines: <code>/ammo</code> switches between them and R reloads the active one. One shot every 3 seconds. It damages buildings, but other players' bases stay protected by the PvE rules.</p>
+</section>
+
+<section id="zombies"><h2>Zombies</h2>
+<div class="tbl"><table><thead><tr><th>Monuments</th><th>Zombies</th><th>Health</th></tr></thead><tbody>
+<tr><td>Small (gas station, supermarket, mining outpost)</td><td>3</td><td>80</td></tr>
+<tr><td>Mid (Water Treatment, Train Yard, Power Plant, Sewer Branch, Harbor, Dome, Ferry Terminal, Junkyard, Satellite Dish, quarries)</td><td>8</td><td>150</td></tr>
+<tr><td>Large (Airfield, Military Tunnels, Launch Site, Arctic Research Base, Abandoned Military Base, Missile Silo)</td><td>15</td><td>250</td></tr>
+</tbody></table></div>
+<ul>
+  <li>Killed zombies come back after 5 minutes. They stay near their monument.</li>
+  <li><b>At night:</b> 50% more zombies, and 25% faster.</li>
+  <li>They drop a small loot bag (scrap, cloth, components, food, meds) and pay a few PawCoins and some Grit.</li>
+  <li>A rare <b>Mega Zombie</b> wanders anywhere, with no announcement. See <a href="#bosses">Bosses</a>.</li>
+</ul>
+</section>
+
+<section id="commands"><h2>All player commands</h2>
+<p>Tier marks show who can use a command; no mark means everyone.</p>
+<div class="tbl"><table><thead><tr><th>Command</th><th>What it does</th></tr></thead><tbody>
+<tr><td><code>/menu</code>, <code>/info</code></td><td>Open the menu (<code>bind f2 romenu.open</code>)</td></tr>
+<tr><td><code>/welcome</code> <code>/rules</code> <code>/wipe</code> <code>/commands</code> <code>/perks</code> <code>/link</code></td><td>Open that Info page</td></tr>
+<tr><td><code>/coins</code> (<code>/pawcoins</code>, <code>/wallet</code>)</td><td>Your PawCoin balance</td></tr>
+<tr><td><code>/vote</code>, <code>/treats</code></td><td>Collect your vote reward; your Treats and streak</td></tr>
+<tr><td><code>/titles</code>, <code>/title buy|&lt;id&gt;|off</code></td><td>Chat titles bought with Treats</td></tr>
+<tr><td><code>/vip</code>, <code>/namecolor</code> <span class="tier t-h">H</span> <span class="tier t-pl">PL</span></td><td>VIP tab; your name colour</td></tr>
+<tr><td><code>/stats</code>, <code>/top &lt;stat&gt; [life]</code></td><td>Your stats; a leaderboard in chat</td></tr>
+<tr><td><code>/grit</code> (<code>/skills</code>), <code>/grit me|top|forecast|journey</code></td><td>Skills tab; chat summary, Journey leaderboard, forecast, start a Journey</td></tr>
+<tr><td><code>/trades</code>, <code>/road</code>, <code>/hof</code></td><td>Trades, Road Markers, Hall of Fame</td></tr>
+<tr><td><code>/kit</code>, <code>/kit &lt;name&gt;</code>, <code>/kit list</code></td><td>Kits</td></tr>
+<tr><td><code>/bp</code>, <code>/unload</code></td><td>Backpack; unload fuel from a flamethrower or chainsaw</td></tr>
+<tr><td><code>/sethome</code> <code>/home</code> <code>/delhome</code> <code>/homes</code></td><td>Homes</td></tr>
+<tr><td><code>/tpr</code> <code>/tpa</code> <code>/tpc</code> <code>/tpauto off|team|all</code></td><td>Teleport requests</td></tr>
+<tr><td><code>/town</code> (<code>/market</code>), <code>/outpost</code>, <code>/bandit</code></td><td>Teleport to Town, Outpost or Bandit Camp</td></tr>
+<tr><td><code>/clan ...</code>, <code>/c</code></td><td>Clans and clan chat</td></tr>
+<tr><td><code>/quests</code> (<code>/q</code>), <code>/tracker</code></td><td>Quests; hide or show the tracker</td></tr>
+<tr><td><code>/raids</code>, <code>/buyraid &lt;tier&gt; [treats]</code>, <code>/inviteraid &lt;player&gt;</code></td><td>Raid bases</td></tr>
+<tr><td><code>/tcs</code>, <code>/abandoned</code></td><td>Your team's TCs; abandoned bases</td></tr>
+<tr><td><code>/island ...</code></td><td>Private islands</td></tr>
+<tr><td><code>/remove</code>, <code>/bgrade 0-4</code></td><td>Remove mode; auto-upgrade</td></tr>
+<tr><td><code>/bup</code> <code>/bdown</code> <code>/brepair</code> <code>/tcrange</code></td><td>Whole-base upgrade, downgrade, repair; show TC range</td></tr>
+<tr><td><code>/lock [private|clan]</code>, <code>/turret</code></td><td>Free code locks; switch a turret on or off</td></tr>
+<tr><td><code>/stack</code> <span class="tier t-w">W</span> <span class="tier t-t">T</span> <span class="tier t-h">H</span> <span class="tier t-pl">PL</span></td><td>Stack chests</td></tr>
+<tr><td><code>/float</code> <span class="tier t-w">W</span>, <code>/rec</code> <span class="tier t-w">W</span></td><td>Floating foundation; personal recycler</td></tr>
+<tr><td><code>/rec pickup</code></td><td>Pick up your placed Recycler</td></tr>
+<tr><td><code>/sort</code>, <code>/autosort</code>, <code>/autodoor</code>, <code>/qol</code></td><td>Sorting and door closer</td></tr>
+<tr><td><code>/send</code> <span class="tier t-pl">PL</span>, <code>/splitter</code> <span class="tier t-pl">PL</span></td><td>Send to boxes; furnace splitter</td></tr>
+<tr><td><code>/sil</code> <span class="tier t-h">H</span> <span class="tier t-pl">PL</span></td><td>Image signs</td></tr>
+<tr><td><code>/hud</code>, <code>/nv [hour]</code>, <code>/sunny</code></td><td>HUD; personal daylight; personal clear weather</td></tr>
+<tr><td><code>/ammo</code></td><td>Switch Fish Pistol magazine</td></tr>
+<tr><td><code>/pm</code>, <code>/r</code>, <code>/ignore</code></td><td>Private messages and ignore</td></tr>
+<tr><td><code>/discord</code>, <code>/discord unlink</code></td><td>Link your Discord</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="links"><h2>Links</h2>
+<div class="linkrow">
+  <a class="btn small" href="https://discord.gg/56RntVw9sm" rel="noopener">Discord</a>
+  <span class="placeholder" title="The store isn't open yet">Store (VIP, Island Deeds): coming soon</span>
+  <span class="placeholder" title="The server isn't listed yet">Vote page: coming soon</span>
+  <span class="placeholder" title="The server isn't open yet">Connect address: at launch</span>
+  <a class="btn alt small" href="./">Riker &amp; Ollie Studios</a>
+</div>
+<p class="fine">Something wrong or missing on this page? Tell us in the Discord.</p>
+</section>
+
+</article></main>
+</div>
+
+<footer class="studio-foot"><div class="wrap">
+  <p>Riker &amp; Ollie's Wasteland is an unofficial community server run by Riker &amp; Ollie Studios. It is not affiliated with or endorsed by Facepunch Studios. Rust is a trademark of Facepunch Studios.</p>
+  <p>Server values (rates, prices, cooldowns) can be tuned before and after launch; the in-game <code>/info</code> pages are always current.</p>
+  <div class="foot-btns"><a class="btn alt small" href="./">Studio home</a><a class="btn alt small" href="#quick-start">Back to top</a></div>
+  <p>© 2026 Riker &amp; Ollie Studios LLC. Page last updated November 22, 2026.</p>
+</div></footer>
+<script>
+(function(){
+  // Link icon next to each heading, so sections are easy to share
+  document.querySelectorAll("article h2[id], article h3[id], article h4[id], article section[id] > h2").forEach(function(h){
+    var id=h.id||h.parentElement.id; if(!id)return;
+    var a=document.createElement("a"); a.className="anchor"; a.href="#"+id; a.textContent="#";
+    a.setAttribute("aria-label","Link to this section"); h.appendChild(a);
+  });
+  // Contents start folded on phones
+  var t=document.getElementById("tocbox");
+  if(t&&window.matchMedia("(max-width:900px)").matches)t.removeAttribute("open");
+  document.querySelectorAll(".toc a").forEach(function(a){a.addEventListener("click",function(){if(window.matchMedia("(max-width:900px)").matches)t.removeAttribute("open");});});
+})();
+</script>
+<script src="site.js"></script>
+</body></html>
