@@ -223,6 +223,16 @@
       "img": "https://images.steamusercontent.com/ugc/10033417323980178443/C6EF9A754441A3B3B0708B9016F6D8AC9F5AC0CD/"
     },
     {
+      "item": "Roadsign Pants",
+      "short": "roadsign.kilt",
+      "name": "ALLFATHER Roadsign Kilt",
+      "set": "vip1",
+      "setName": "Tracker",
+      "code": "T",
+      "id": "3820616693",
+      "img": "https://images.steamusercontent.com/ugc/15287709826916191197/FCE11BBD1B5502173B7E3C74E39D06923191AC97/"
+    },
+    {
       "item": "Tactical Gloves",
       "short": "tactical.gloves",
       "name": "ALLFATHER Tactical Gloves",
@@ -291,6 +301,16 @@
       "code": "H",
       "id": "3824400564",
       "img": "https://images.steamusercontent.com/ugc/15466483163732439198/92D3C245A9EFE9145C84BEC62AA362B7B6C5E6D7/"
+    },
+    {
+      "item": "Roadsign Pants",
+      "short": "roadsign.kilt",
+      "name": "ARES Roadsign Kilt",
+      "set": "vip2",
+      "setName": "Hound",
+      "code": "H",
+      "id": "3824400702",
+      "img": "https://images.steamusercontent.com/ugc/9362379061185054096/032F6A9BF326CED0819E3694861BA2FC48B2976F/"
     },
     {
       "item": "Tactical Gloves",
@@ -421,6 +441,16 @@
       "code": "PL",
       "id": "3820506145",
       "img": "https://images.steamusercontent.com/ugc/17587157260846840537/17B2C3D8ED9E314C788C24B681CDB28162607292/"
+    },
+    {
+      "item": "Roadsign Pants",
+      "short": "roadsign.kilt",
+      "name": "GLADIATOR Roadsign Kilt",
+      "set": "vip3",
+      "setName": "Pack Leader",
+      "code": "PL",
+      "id": "3824277229",
+      "img": "https://images.steamusercontent.com/ugc/18277778219856645429/32274A980F878EA63F7D918BE23CAD03662B1B1C/"
     },
     {
       "item": "Tactical Gloves",
