@@ -63,6 +63,26 @@
       "img": "https://images.steamusercontent.com/ugc/12881775694490214868/92A2DB2071B450C19E607F161699B6E4DCD6E382/"
     },
     {
+      "item": "Roadsign Pants",
+      "short": "roadsign.kilt",
+      "name": "Driftline Roadsign Kilt (Pink)",
+      "set": "free",
+      "setName": "Base",
+      "code": "Free",
+      "id": "3823835625",
+      "img": "https://images.steamusercontent.com/ugc/12066739516052065003/B5AA31F46EE023F3E73C827F5346B9DCCBC04747/"
+    },
+    {
+      "item": "Salvaged Axe",
+      "short": "axe.salvaged",
+      "name": "Driftline Salvaged Axe (Pink)",
+      "set": "free",
+      "setName": "Base",
+      "code": "Free",
+      "id": "3829911366",
+      "img": "https://images.steamusercontent.com/ugc/12682643457918069740/6EF1A78A4FD7B05CB44BE9C0290C4779F5D2F96B/"
+    },
+    {
       "item": "Small Backpack",
       "short": "smallbackpack",
       "name": "Driftline Small Backpack (Pink)",
