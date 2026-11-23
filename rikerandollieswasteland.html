@@ -105,6 +105,7 @@ tr:last-child td{border-bottom:0}
   <li><a href="#qol">Quality of life</a></li>
   <li><a href="#chat">Chat, PMs and Discord</a></li>
   <li><a href="#trading">Trading with players</a></li>
+  <li><a href="#garage">Vehicle garage</a></li>
   <li><a href="#town">Town and travel</a></li>
   <li><a href="#raids">Raid bases</a></li>
   <li><a href="#abandoned">Abandoned bases</a></li>
@@ -168,6 +169,7 @@ tr:last-child td{border-bottom:0}
 <tr><td>Backpack</td><td>Kept, except Tier 2+ gear (<a href="#backpack-wipe">details</a>)</td><td>Same as monthly</td></tr>
 <tr><td>Wastelander status, VIP</td><td>Kept</td><td>Kept</td></tr>
 <tr><td>Clans</td><td>Kept</td><td>Kept</td></tr>
+<tr><td>Garage vehicles</td><td>Kept, back in your garage; the fuel and cargo in them are cleared, destroyed ones come back</td><td>Same as monthly</td></tr>
 <tr><td>Grit and Miles</td><td>Kept</td><td>Reset</td></tr>
 <tr><td>Trades</td><td>Ranks 4 and 5 reset (points refunded); ranks 1 to 3 kept</td><td>All reset, Scrap Points too</td></tr>
 <tr><td>Journeys, badge, title, Year marks</td><td>Kept</td><td>Kept forever</td></tr>
@@ -410,13 +412,15 @@ tr:last-child td{border-bottom:0}
 <tr><td>Wastelander kit</td><td>–</td><td>✓</td><td>–</td><td>–</td><td>–</td></tr>
 <tr><td>Floating foundations (<code>/float</code>)</td><td>–</td><td>✓</td><td>–</td><td>–</td><td>–</td></tr>
 <tr><td>Personal recycler, 2× speed (<code>/rec</code>)</td><td>–</td><td>✓</td><td>–</td><td>–</td><td>–</td></tr>
+<tr><td>Garage minicopter with no decay</td><td>–</td><td>✓</td><td>–</td><td>–</td><td>–</td></tr>
+<tr><td>Garage vehicles out at once</td><td>2</td><td>3</td><td>3</td><td>3</td><td>3</td></tr>
 <tr><td>Queue skip</td><td>–</td><td>–</td><td>✓</td><td>✓</td><td>✓</td></tr>
 <tr><td>Image signs (<code>/sil</code>)</td><td>–</td><td>–</td><td>–</td><td>5</td><td>10</td></tr>
 <tr><td>Send to boxes (<code>/send</code>), furnace splitter</td><td>–</td><td>–</td><td>–</td><td>–</td><td>✓</td></tr>
 <tr><td>Discord role and colour</td><td>–</td><td>Wastelander role</td><td>✓</td><td>✓</td><td>✓, shown above all</td></tr>
 </tbody></table></div>
-<p><b>Everyone (Free)</b> also gets: no drops in PvE, the wallet and shop, free kits, Town/Outpost/Bandit teleports, clans, every building tool (remove with refund, auto-upgrade, whole-base upgrade and repair, workbench range over your base, powerless CCTV and turrets, indoor large furnaces), free code locks, <code>/sort</code>, auto-sort and <code>/autodoor</code>, <code>/nv</code> and <code>/sunny</code>, and placeable Recycler items.</p>
-<p class="soon">Coming soon: skin box (free Workshop skins, more sets with each tier), virtual quarry and refinery, vehicle garage, basements (Wastelander), coloured lanterns and lights, a VIP Discord channel, and a custom title for Pack Leader.</p>
+<p><b>Everyone (Free)</b> also gets: no drops in PvE, the wallet and shop, free kits, Town/Outpost/Bandit teleports, clans, every building tool (remove with refund, auto-upgrade, whole-base upgrade and repair, workbench range over your base, powerless CCTV and turrets, indoor large furnaces), free code locks, <code>/sort</code>, auto-sort and <code>/autodoor</code>, <code>/nv</code> and <code>/sunny</code>, placeable Recycler items, and the <a href="#garage">vehicle garage</a>.</p>
+<p class="soon">Coming soon: skin box (free Workshop skins, more sets with each tier), virtual quarry and refinery, basements (Wastelander), coloured lanterns and lights, a VIP Discord channel, and a custom title for Pack Leader.</p>
 <h3 id="vip-prices">VIP prices</h3>
 <div class="tbl"><table><thead><tr><th>Tier</th><th>One month (30 days)</th><th>Monthly subscription</th><th>Lifetime</th></tr></thead><tbody>
 <tr><td><span class="tier t-t">T</span> Tracker</td><td>$6.99</td><td>$4.99</td><td>$49.99</td></tr>
@@ -517,6 +521,21 @@ tr:last-child td{border-bottom:0}
   <li>No trading at the PvP Monument, while PvP-active, right after taking damage, when downed, in a seat or vehicle, or in a raid zone.</li>
   <li><code>/trade block</code> turns trade requests off (and on again). Players you <code>/ignore</code> can't send you requests.</li>
   <li>Every trade is logged for staff.</li>
+</ul>
+</section>
+
+<section id="garage"><h2>Vehicle garage</h2>
+<p>Buy a vehicle once with PawCoins and it's yours to keep: bring it out when you need it, put it away when you're done. Same prices for everyone.</p>
+<ul>
+  <li><code>/buy</code> (or <code>/garage</code>) opens the <b>GARAGE</b> tab in <code>/menu</code>. <code>/buy minicopter</code> buys in chat. Vehicles: minicopter, scrap heli, attack heli, rowboat, RHIB, tugboat, horse (with a saddle), cars with 2, 3 or 4 modules, motorbike, motorbike with sidecar, bicycle and snowmobile. Your coins are only taken once the vehicle is out, and if it doesn't make it, you get them back.</li>
+  <li><code>/spawn &lt;name&gt;</code> brings it out near you: boats on water next to you, helis on flat open ground, never inside a building or on someone else's base.</li>
+  <li><code>/recall</code> (or <code>/store</code>) puts it back in your garage with its fuel, cargo, car modules and engine parts, ready for next time. <code>/recall all</code> puts everything away. Get everyone off first.</li>
+  <li>Only you and your clan can drive it, open its fuel or storage, or push it. <code>/garage allow &lt;name&gt;</code> lets a friend use your vehicles too (<code>/garage unallow &lt;name&gt;</code>). Other players can't damage it, except at the PvP Monument when you're both PvP-active.</li>
+  <li>Destroyed? <code>/garage repair &lt;name&gt;</code> (or the Repair button) gets it back for half the price. Whatever was inside drops where it was destroyed.</li>
+  <li>A vehicle left alone for 30 minutes with nobody near goes back to your garage by itself, with everything still in it.</li>
+  <li>No spawning or recalling while PvP-active, at the PvP Monument or in a raid zone. No spawning in Town.</li>
+  <li>Your vehicles are kept through map wipes. The fuel and cargo in them are cleared at the wipe.</li>
+  <li><b>Wastelander:</b> your garage minicopter never decays.</li>
 </ul>
 </section>
 
@@ -647,6 +666,9 @@ tr:last-child td{border-bottom:0}
 <tr><td><code>/ammo</code></td><td>Switch Fish Pistol magazine</td></tr>
 <tr><td><code>/pm</code>, <code>/r</code>, <code>/ignore</code></td><td>Private messages and ignore</td></tr>
 <tr><td><code>/trade &lt;name&gt;</code>, <code>/trade accept|decline|cancel|block</code></td><td>Trade items, PawCoins and Treats with a player</td></tr>
+<tr><td><code>/buy</code>, <code>/buy &lt;vehicle&gt;</code></td><td>Vehicles for PawCoins (GARAGE tab), or buy one</td></tr>
+<tr><td><code>/spawn &lt;vehicle&gt;</code>, <code>/recall [vehicle|all]</code></td><td>Bring your vehicle out near you, or put it away with its fuel and cargo</td></tr>
+<tr><td><code>/garage</code>, <code>/garage repair|allow|unallow &lt;name&gt;</code></td><td>Your vehicles; repair a destroyed one; let a friend drive</td></tr>
 <tr><td><code>/discord</code>, <code>/discord unlink</code></td><td>Link your Discord</td></tr>
 </tbody></table></div>
 </section>
