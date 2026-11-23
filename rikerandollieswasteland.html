@@ -542,7 +542,8 @@ tr:last-child td{border-bottom:0}
 <section id="trading"><h2>Trading with players</h2>
 <p>Trade items, PawCoins and Treats with another player safely, anywhere on the map. Same for everyone.</p>
 <ol>
-  <li><code>/trade &lt;name&gt;</code> sends a request. They have 30 seconds to type <code>/trade accept</code> (or <code>/trade decline</code>).</li>
+  <li><code>/trade</code> on its own opens a list of who's online: players near you first (with how far away they are), then everyone else A&ndash;Z, with a search box. Click a name to send the request. Anyone who can't trade right now is greyed out with the reason. Or look at a player standing right in front of you and type <code>/trade</code>. The STATS tab in <code>/menu</code> has a <b>Trade a player</b> button too.</li>
+  <li><code>/trade &lt;name&gt;</code> sends a request (part of the name is enough). They have 30 seconds to type <code>/trade accept</code> (or <code>/trade decline</code>).</li>
   <li>You both get a trade window: your own offer box (the loot panel, 12 slots) and, above it, what the other player offers, live. Type PawCoins and Treats into the fields. <b>List in chat</b> prints their offer with condition and skins.</li>
   <li>When the offer looks right, press <b>Accept</b>. Once you both have, a <b>3 second countdown</b> runs. Any change to either offer clears both accepts and stops the countdown, so nobody can swap something at the last second.</li>
   <li>The swap happens all at once. If one of you doesn't have a free inventory slot for every stack coming in, nothing moves.</li>
@@ -697,7 +698,7 @@ tr:last-child td{border-bottom:0}
 <tr><td><code>/hud</code>, <code>/nv [hour]</code>, <code>/sunny</code></td><td>HUD; personal daylight; personal clear weather</td></tr>
 <tr><td><code>/ammo</code></td><td>Switch Fish Pistol magazine</td></tr>
 <tr><td><code>/pm</code>, <code>/r</code>, <code>/ignore</code></td><td>Private messages and ignore</td></tr>
-<tr><td><code>/trade &lt;name&gt;</code>, <code>/trade accept|decline|cancel|block</code></td><td>Trade items, PawCoins and Treats with a player</td></tr>
+<tr><td><code>/trade</code>, <code>/trade &lt;name&gt;</code>, <code>/trade accept|decline|cancel|block|help</code></td><td>Trade items, PawCoins and Treats with a player</td></tr>
 <tr><td><code>/buy</code>, <code>/buy &lt;vehicle&gt;</code></td><td>Vehicles for PawCoins (GARAGE tab), or buy one</td></tr>
 <tr><td><code>/spawn &lt;vehicle&gt;</code>, <code>/recall [vehicle|all]</code></td><td>Bring your vehicle out near you, or put it away with its fuel and cargo</td></tr>
 <tr><td><code>/garage</code>, <code>/garage repair|allow|unallow &lt;name&gt;</code></td><td>Your vehicles; repair a destroyed one; let a friend drive</td></tr>
