@@ -7,24 +7,23 @@ Static page for building Discord incoming-webhook embeds and sending them from G
 - `discord-webhook.html` — the builder. Open it directly in a browser or publish it to GitHub Pages.
 - `discord-proxy-worker.js` — optional Cloudflare Worker that makes browser sending possible.
 
-## Why a proxy is needed
+## Sending
 
-Discord webhook endpoints do **not** send CORS headers. A `fetch()` from a `github.io` page is blocked by the browser before Discord receives it. The page therefore supports two modes:
+Discord's webhook endpoint accepts requests straight from the browser (it returns CORS headers for this site, checked 2026-11-23), so **Send to Discord** works with **Use proxy** unchecked, which is now the default. The Cloudflare Worker (`discord-proxy-worker.js`) is optional: only use it if direct sending ever stops working.
 
-1. **Copy JSON** — always works. Paste the JSON into `curl`, Postman, or any server-side script.
-2. **Send to Discord** — works when you deploy the tiny Cloudflare Worker and paste its URL into the page.
+**Copy JSON** always works too: paste the JSON into `curl`, Postman, or any server-side script.
 
 The webhook URL is never hardcoded in the page. With "Remember URL" checked it is stored only in your browser's localStorage.
 
 ## Setup
 
 1. In Discord, open **Server Settings → Integrations → Webhooks → New Webhook**, choose a channel, and copy the webhook URL.
-2. Deploy `discord-proxy-worker.js`:
+2. (Optional, only if direct sending fails) Deploy `discord-proxy-worker.js`:
    - Cloudflare dashboard → **Workers & Pages** → **Create Worker**.
    - Paste the file contents, deploy, and copy the worker URL (for example `https://your-worker.workers.dev`).
 3. Open `discord-webhook.html` (or its GitHub Pages URL).
 4. Paste the Discord webhook URL into **Discord webhook URL**.
-5. Paste the worker URL into **Proxy endpoint URL** and leave **Use proxy** checked.
+5. Leave **Use proxy** unchecked. (If you deployed the Worker: paste its URL into **Proxy endpoint URL** and check **Use proxy**.)
 6. Build an embed, then click **Send to Discord**.
 
 If you only want the JSON, leave **Use proxy** unchecked and click **Copy JSON**.

@@ -127,7 +127,7 @@
         <input id="proxyUrl" type="text" placeholder="https://your-worker.workers.dev" />
         <div class="hint">Deploy <code>discord-proxy-worker.js</code> to get this URL. Leave blank and uncheck “Use proxy” to build JSON only.</div>
       </div>
-      <div class="check"><input id="useProxy" type="checkbox" checked><label for="useProxy">Use proxy when sending</label></div>
+      <div class="check"><input id="useProxy" type="checkbox"><label for="useProxy">Use proxy when sending</label></div>
       <div class="check"><input id="remember" type="checkbox" checked><label for="remember">Remember URL and proxy in this browser</label></div>
     </div>
   </div>
@@ -388,7 +388,7 @@
       const s = JSON.parse(localStorage.getItem(STORE) || "{}");
       $("webhookUrl").value = s.webhook || "";
       $("proxyUrl").value = s.proxy || "";
-      $("useProxy").checked = s.useProxy !== false;
+      $("useProxy").checked = s.useProxy === true;
       $("remember").checked = !!s.webhook || !!s.proxy;
     } catch (_) { /* ignore bad saved data */ }
   }
@@ -428,7 +428,7 @@
     } catch (err) {
       const hint = useProxy
         ? "Check the proxy URL and that the Worker is deployed."
-        : "Direct browser requests are blocked by Discord's CORS policy. Use the proxy or Copy JSON.";
+        : "Check your internet connection and the webhook URL (a deleted webhook or an ad blocker can also block it), or use Copy JSON.";
       showStatus("Could not send: " + err.message + ". " + hint, true);
     } finally {
       $("send").disabled = false;
