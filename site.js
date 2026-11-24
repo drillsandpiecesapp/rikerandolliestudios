@@ -82,3 +82,33 @@ window.rosSend = function (subject, name, email, message, honey) {
     return true;
   });
 };
+
+// Contact dialog in the footer of the home page and the apps page
+(function(){
+  var d=document.getElementById("contactDlg"),f=document.getElementById("contactForm"),btn=document.getElementById("contactBtn");
+  if(!d||!btn)return;
+  var box=document.getElementById("cmsg"),t=document.getElementById("cmsgtxt"),o=document.getElementById("cout");
+  function close(){if(d.close)d.close();else d.removeAttribute("open");}
+  btn.addEventListener("click",function(){box.hidden=true;if(d.showModal)d.showModal();else d.setAttribute("open","");document.getElementById("cname").focus();});
+  document.getElementById("contactX").addEventListener("click",close);
+  document.getElementById("contactCancel").addEventListener("click",close);
+  d.addEventListener("click",function(e){if(e.target===d)close();});
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    var n=document.getElementById("cname").value.trim(),em=document.getElementById("cemail").value.trim(),tp=document.getElementById("ctopic").value,m=document.getElementById("cmessage").value.trim();
+    var body="Name: "+n+"\n"+"Email: "+em+"\n"+"Topic: "+tp+"\n\n"+m;
+    var go=f.querySelector('button[type="submit"]'),hp=document.getElementById("chp");
+    function fallback(){
+      window.location.href="mailto:melissa@rikerandolliestudios.com?subject="+encodeURIComponent("Website contact: "+tp)+"&body="+encodeURIComponent(body);
+      o.value=body;o.hidden=false;box.hidden=false;
+      t.textContent="If your email app didn’t open, copy this text and email it to melissa@rikerandolliestudios.com.";
+    }
+    go.disabled=true;
+    window.rosSend("Website contact: "+tp,n,em,body,hp&&hp.checked).then(function(){
+      o.hidden=true;box.hidden=false;t.textContent="Thank you! Your message was sent. I’ll reply by email.";f.reset();
+    },function(err){
+      if(err&&err.message==="nokey"){fallback();}
+      else{o.value=body;o.hidden=false;box.hidden=false;t.textContent="Sorry, your message couldn’t be sent. Please copy it and email melissa@rikerandolliestudios.com.";}
+    }).then(function(){go.disabled=false;});
+  });
+})();

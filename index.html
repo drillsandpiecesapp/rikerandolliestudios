@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Riker &amp; Ollie Studios: Independent Android Apps</title>
-<meta name="description" content="Riker &amp; Ollie Studios is a small, independent Android app studio in Oregon. Apps for hobbyists and game fans: Drills &amp; Pieces, Bunco Bunch, PXL MMO Companion and Closed Alpha Reminder.">
-<meta property="og:title" content="Riker &amp; Ollie Studios: Independent Android Apps">
-<meta property="og:description" content="Friendly, polished Android apps for hobbyists and game fans, made by an independent developer in Oregon.">
+<title>Riker &amp; Ollie Studios: Android Apps and a Rust Community Server</title>
+<meta name="description" content="Riker &amp; Ollie Studios is a small, independent studio in Oregon. Home of Riker &amp; Ollie's Wasteland, a PvE Rust community server, and Android apps for hobbyists and game fans.">
+<meta property="og:title" content="Riker &amp; Ollie Studios">
+<meta property="og:description" content="Home of Riker &amp; Ollie's Wasteland, a PvE Rust community server, and friendly Android apps for hobbyists and game fans.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://rikerandolliestudios.com/img/og-image.jpg">
 <meta name="theme-color" content="#1A0A44">
@@ -12,90 +12,55 @@
 <link rel="stylesheet" href="studio.css"><link rel="stylesheet" href="theme.css"><script src="theme.js"></script>
 </head>
 <body class="studio">
-<a class="skip" href="#apps">Skip to the apps</a>
+<a class="skip" href="#explore">Skip to the Rust server and the apps</a>
 
 <header class="topbar"><div class="wrap bar">
-  <div class="brand-row"><img class="mono on-dark" src="img/ros-monogram-white.png" alt="Riker &amp; Ollie Studios logo: the letters R, O and S with a paw print inside the O" width="760" height="397"><img class="mono on-light" src="img/ros-monogram-dark.png" alt="" aria-hidden="true" width="760" height="397"><h1>Riker &amp; Ollie Studios</h1></div>
-  <p class="tag">Independent Android apps for hobbyists and game fans, designed and built by one developer in Oregon.</p>
+  <a class="brand-row" href="./" title="Riker &amp; Ollie Studios home"><img class="mono on-dark" src="img/ros-monogram-white.png" alt="Riker &amp; Ollie Studios logo: the letters R, O and S with a paw print inside the O" width="760" height="397"><img class="mono on-light" src="img/ros-monogram-dark.png" alt="" aria-hidden="true" width="760" height="397"><h1>Riker &amp; Ollie Studios</h1></a>
+  <p class="tag">A PvE Rust community server and independent Android apps, made by one developer in Oregon.</p>
 </div></header>
 
 <main>
-<section id="apps"><div class="wrap">
-  <h2>Apps from the studio</h2>
-  <p class="sub">Simple, friendly tools made to be easy to use from the first tap.</p>
-  <div class="wheel-wrap">
-  <div class="wheel" id="wheel" tabindex="0" role="region" aria-label="Apps from the studio, scroll sideways">
+<section id="explore"><div class="wrap">
+  <h2>Pick where to go</h2>
+  <p class="sub">Click a picture to step inside.</p>
+  <div class="tiles">
 
-    <a class="card" href="drills-and-pieces.html">
-      <div class="card-head"><img src="icon.png" alt="Drills &amp; Pieces icon, a purple faceted gem with D&amp;P" width="72" height="72">
-        <div><h3>Drills &amp; Pieces</h3><span class="chip">In closed testing on Google Play</span></div></div>
-      <p>The Hobby &amp; Craft Timer. Keep every diamond art, puzzle and other craft project in one place, with timers, drill stock, a home screen widget and backups.</p>
-      <p class="fine">Free, with ads. One-time purchase removes them. No login needed.</p>
-      <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    <a class="card tile" href="rikerandollieswasteland.html">
+      <picture>
+        <source media="(max-width:640px)" srcset="img/wasteland-header.png" width="1024" height="512">
+        <img src="img/wasteland-banner.png" alt="Welcome to Riker &amp; Ollie's Wasteland: PvE, PvP Monument, zombies and raid bases, on a dusk skyline with a full moon" width="2000" height="500">
+      </picture>
+      <div class="tile-body">
+        <div>
+          <h3>Riker &amp; Ollie's Wasteland</h3><span class="chip">Rust server, live now</span>
+          <p>A PvE Rust server with 15x rates, no drops in PvE, zombies, bosses, raid bases, quests and a year-long story. The wiki covers every menu, command and perk.</p>
+          <p>To join, press F1 in Rust and type <code class="connect">client.connect 208.52.152.43:27915</code>, or search the server list for <b>Riker &amp; Ollie's Wasteland</b>.</p>
+          <p class="fine">An unofficial community server, not affiliated with or endorsed by Facepunch Studios.</p>
+        </div>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
     </a>
 
-    <a class="card" href="bunco-bunch.html">
-      <div class="card-head"><img src="bunco-icon.jpg" alt="Bunco Bunch icon, three glittery dice showing sixes" width="72" height="72">
-        <div><h3>Bunco Bunch</h3><span class="chip">In closed testing on Google Play</span></div></div>
-      <p>Run your whole Bunco night from your phone: score for 2 to 40 players, work out the prizes, and settle who wins what.</p>
-      <p class="fine">No personal data is ever collected, and no login is needed. Free, with ads; a one-time purchase removes them.</p>
-      <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    <a class="card tile" href="apps.html">
+      <picture>
+        <source media="(max-width:640px)" srcset="img/apps-banner-small.webp" width="1024" height="512">
+        <img src="img/apps-banner.webp" alt="Riker &amp; Ollie Studios Android apps, with the icons of Drills &amp; Pieces, Bunco Bunch, PXL MMO Companion, Closed Alpha Reminder and Crumb Trail Manager" width="2000" height="500" loading="lazy">
+      </picture>
+      <div class="tile-body">
+        <div>
+          <h3>Android apps</h3><span class="chip">App development</span>
+          <p>Simple, friendly tools for hobbyists and game fans: Drills &amp; Pieces, Bunco Bunch, PXL MMO Companion, Closed Alpha Reminder and Crumb Trail Manager.</p>
+          <p class="fine">Also here: how I build my apps, and custom app work.</p>
+        </div>
+        <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
     </a>
 
-    <a class="card" href="pxl-mmo-companion.html">
-      <div class="card-head"><img src="pxl-icon.svg" alt="PXL MMO Companion icon, the letters PXL over MMO in pixel type" width="72" height="72">
-        <div><h3>PXL MMO Companion</h3><span class="chip">Coming soon to Google Play</span></div></div>
-      <p>A fan-made companion for the game PXL MMO: the game clock and weather, which fish are biting, farm timers, cooking and crafting recipes, items, combat, the map and leaderboards.</p>
-      <p class="fine">Made with the game developer’s permission; not an official app of the game. Free, with ads; a one-time purchase removes them.</p>
-      <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-    </a>
-
-    <a class="card" href="closed-alpha-reminder.html">
-      <div class="card-head"><img src="closed-alpha-icon.svg" alt="Closed Alpha Reminder icon, a clipboard with two check marks" width="72" height="72">
-        <div><h3>Closed Alpha Reminder</h3><span class="chip">Coming soon to Google Play</span></div></div>
-      <p>Keep up with every Google Play closed test you’ve joined: who made each app, the links to join, how many days you’ve tested, notes for the developer, and a daily reminder to open each one.</p>
-      <p class="fine">No personal data is ever collected, and no login is needed. Free, with ads; a one-time purchase removes them.</p>
-      <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-    </a>
-
-    <a class="card" href="crumb-trail.html">
-      <div class="card-head"><img src="crumb-trail-icon.svg" alt="Crumb Trail Manager icon, a white bowl with a trail of crumbs on purple" width="72" height="72">
-        <div><h3>Crumb Trail Manager</h3><span class="chip">Coming soon to Google Play</span></div></div>
-      <p>Save recipes from any website with credit to the cook, keep your grocery list, and track what’s in your pantry, fridge, freezer and spice rack.</p>
-      <p class="fine">Free, with ads. One-time purchase removes them. No login needed.</p>
-      <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-    </a>
-  </div>
-  <div class="wheel-nav"><button class="wnav" id="wprev" type="button" aria-label="Previous app"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><div class="wdots" id="wdots"></div><button class="wnav" id="wnext" type="button" aria-label="Next app"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
-  </div>
-</div></section>
-
-<section id="games"><div class="wrap">
-  <h2>Our game server</h2>
-  <p class="sub">The studio also runs a community server for Rust, launching soon.</p>
-  <a class="card" href="rikerandollieswasteland.html" style="max-width:560px">
-    <div class="card-head"><img src="img/pawcoin/pawcoin-512.png" alt="The PawCoin, a gold coin with a dog paw print" width="72" height="72">
-      <div><h3>Riker &amp; Ollie's Wasteland</h3><span class="chip">Server wiki</span></div></div>
-    <p>A PvE Rust server with 15x rates, no drops in PvE, zombies, bosses, raid bases, quests and a year-long story. The wiki covers every menu, command and perk.</p>
-    <p class="fine">An unofficial community server, not affiliated with or endorsed by Facepunch Studios.</p>
-    <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-  </a>
-</div></section>
-
-<section id="about"><div class="wrap">
-  <div class="about">
-    <div>
-      <h2>About the studio</h2>
-      <p>Riker &amp; Ollie Studios LLC is a small, independent Android app studio based in Oregon. I design, build and test every app myself, so there is no big team between you and the person making the updates.</p>
-      <p>My apps follow a minimalist design philosophy with a strong focus on ease of use. Every feature is chosen to be intuitive, uncluttered and genuinely useful, so you can spend less time learning software and more time enjoying your hobbies and favorite games.</p>
-    <p>A Discord community is coming soon.</p>
-      <div class="cta"><a class="btn alt small" href="about-and-custom-apps.html">How I build my apps, and custom app work</a></div>
-    </div>
   </div>
 </div></section>
 </main>
 
-<div class="dogs-band"><div class="wrap"><div class="hero-dogs"><figure class="pet ollie"><img class="hero-ollie" src="img/ollie.webp" alt="Ollie, a black dog with amber eyes and a red collar" width="800" height="800"><figcaption>Ollie</figcaption></figure><figure class="pet riker"><img class="hero-dog" src="img/dog.webp" alt="Riker, a golden retriever with a tilted head and soulful brown eyes" width="1000" height="1000"><figcaption>Riker</figcaption></figure></div></div></div>
+<div class="dogs-band"><div class="wrap"><div class="hero-dogs"><figure class="pet ollie"><img class="hero-ollie" src="img/ollie.webp" alt="Ollie, a black dog with amber eyes and a red collar" width="800" height="800" loading="lazy"><figcaption>Ollie</figcaption></figure><figure class="pet riker"><img class="hero-dog" src="img/dog.webp" alt="Riker, a golden retriever with a tilted head and soulful brown eyes" width="1000" height="1000" loading="lazy"><figcaption>Riker</figcaption></figure></div></div></div>
 
 <footer class="studio-foot"><div class="wrap">
   <p>Contact: Melissa @ <a class="btn alt small" href="mailto:melissa@rikerandolliestudios.com">melissa@rikerandolliestudios.com</a>.</p>
@@ -104,20 +69,12 @@
     <li>Should you need to contact me, your information will never be shared unless required by law.</li>
   </ul>
   <div class="foot-btns">
-  <a class="btn alt small" href="about-and-custom-apps.html">AI &amp; custom apps</a>
+  <a class="btn alt small" href="rikerandollieswasteland.html">Wasteland wiki</a>
+  <a class="btn alt small" href="apps.html">Android apps</a>
   <button class="btn alt small" type="button" id="contactBtn">Contact us</button>
-  <details class="links">
-    <summary>Privacy policies</summary>
-    <nav aria-label="Privacy policies">
-      <a href="privacy.html">Drills &amp; Pieces Privacy Policy</a>
-      <a href="bunco-privacy.html">Bunco Bunch Privacy Policy</a>
-      <a href="closed-alpha-reminder-privacy.html">Closed Alpha Reminder Privacy Policy</a>
-      <a href="PXLPrivacyNotice.html">PXL MMO Companion Privacy Policy</a>
-      <a href="crumb-trail-privacy.html">Crumb Trail Manager Privacy Policy</a>
-    </nav>
-  </details>
   </div>
-  <p>© 2026 Riker &amp; Ollie Studios LLC. Page last updated November 18, 2026.</p>
+  <p>Riker &amp; Ollie's Wasteland is an unofficial community server. It is not affiliated with or endorsed by Facepunch Studios. Rust is a trademark of Facepunch Studios.</p>
+  <p>© 2026 Riker &amp; Ollie Studios LLC. Page last updated November 24, 2026.</p>
 </div></footer>
 
 <dialog class="contact" id="contactDlg" aria-labelledby="ctitle">
@@ -127,42 +84,12 @@
   <form id="contactForm">
     <div class="f"><label for="cname">Your name</label><input type="text" id="cname" required autocomplete="name"></div>
     <div class="f"><label for="cemail">Your email</label><input type="email" id="cemail" required autocomplete="email"></div>
-    <div class="f"><label for="ctopic">What&rsquo;s this about?</label><select id="ctopic"><option>Question about an app</option><option>Feedback or bug report</option><option>Becoming a tester</option><option>Custom app / contract work</option><option>Something else</option></select></div>
+    <div class="f"><label for="ctopic">What&rsquo;s this about?</label><select id="ctopic"><option>Question about an app</option><option>The Rust server</option><option>Feedback or bug report</option><option>Becoming a tester</option><option>Custom app / contract work</option><option>Something else</option></select></div>
     <div class="f"><label for="cmessage">Message</label><textarea id="cmessage" required></textarea></div>
     <input type="checkbox" id="chp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
     <div class="row"><button class="btn small" type="submit">Send message</button><button class="btn alt small" type="button" id="contactCancel">Cancel</button></div>
     <div id="cmsg" hidden><p class="fine" id="cmsgtxt"></p><textarea id="cout" readonly aria-label="Your message as text"></textarea></div>
   </form>
 </dialog>
-<script>
-(function(){
-  var d=document.getElementById("contactDlg"),f=document.getElementById("contactForm"),btn=document.getElementById("contactBtn");
-  if(!d||!btn)return;
-  var box=document.getElementById("cmsg"),t=document.getElementById("cmsgtxt"),o=document.getElementById("cout");
-  function close(){if(d.close)d.close();else d.removeAttribute("open");}
-  btn.addEventListener("click",function(){box.hidden=true;if(d.showModal)d.showModal();else d.setAttribute("open","");document.getElementById("cname").focus();});
-  document.getElementById("contactX").addEventListener("click",close);
-  document.getElementById("contactCancel").addEventListener("click",close);
-  d.addEventListener("click",function(e){if(e.target===d)close();});
-  f.addEventListener("submit",function(e){
-    e.preventDefault();
-    var n=document.getElementById("cname").value.trim(),em=document.getElementById("cemail").value.trim(),tp=document.getElementById("ctopic").value,m=document.getElementById("cmessage").value.trim();
-    var body="Name: "+n+"\n"+"Email: "+em+"\n"+"Topic: "+tp+"\n\n"+m;
-    var go=f.querySelector('button[type="submit"]'),hp=document.getElementById("chp");
-    function fallback(){
-      window.location.href="mailto:melissa@rikerandolliestudios.com?subject="+encodeURIComponent("Website contact: "+tp)+"&body="+encodeURIComponent(body);
-      o.value=body;o.hidden=false;box.hidden=false;
-      t.textContent="If your email app didn’t open, copy this text and email it to melissa@rikerandolliestudios.com.";
-    }
-    go.disabled=true;
-    window.rosSend("Website contact: "+tp,n,em,body,hp&&hp.checked).then(function(){
-      o.hidden=true;box.hidden=false;t.textContent="Thank you! Your message was sent. I’ll reply by email.";f.reset();
-    },function(err){
-      if(err&&err.message==="nokey"){fallback();}
-      else{o.value=body;o.hidden=false;box.hidden=false;t.textContent="Sorry, your message couldn’t be sent. Please copy it and email melissa@rikerandolliestudios.com.";}
-    }).then(function(){go.disabled=false;});
-  });
-})();
-</script>
 <script src="site.js"></script>
 </body></html>
