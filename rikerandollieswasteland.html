@@ -339,6 +339,7 @@ tr:last-child td{border-bottom:0}
 <p>Cooldowns and uses reset at each map wipe. Other kits can unlock at a Mile or Journey, after a quest, at a VIP tier (cosmetic only), or cost Treats. Whatever you can see in the Kits tab is what you can claim.</p>
 
 <h3 id="backpack">Backpack</h3>
+<p>Mouse only? A backpack button sits to the left of the hotbar. Click it while your cursor is free (inventory open). Hide or show it with <code>/bpicon</code>.</p>
 <p>Open it with <code>/bp</code>, the Backpack tab's <b>Open backpack</b> button, or a key (<code>bind b backpack.open</code>, press again to close). Each page holds <b>48 slots</b>; switch pages with the Prev and Next buttons.</p>
 <div class="tbl"><table><thead><tr><th>Tier</th><th>Pages</th><th>Slots</th></tr></thead><tbody>
 <tr><td><span class="tier t-free">Free</span></td><td>1</td><td>48</td></tr>
@@ -539,7 +540,8 @@ tr:last-child td{border-bottom:0}
   <li><b>In the menu:</b> <code>/menu</code> &gt; Info &gt; <b>Tickets</b>: pick a type, type what happened and press Enter. The same tab shows your open ticket, lets you add to it and close it.</li>
   <li><b>On Discord:</b> in <b>#open-a-ticket</b>, press the button for your type and fill in the short form.</li>
   <li>Your ticket is a private thread that only you and staff can see. If your Discord is linked (<code>/discord</code>), you're added to it. Staff replies also show in your game chat, and if you're offline you see them when you next log in.</li>
-  <li><code>/ticket</code> shows your ticket, <code>/ticket &lt;text&gt;</code> adds to it, <code>/ticket close</code> closes it. One open ticket at a time, and a short wait before opening another.</li>
+  <li><code>/tickets</code> (or <code>/support</code>) opens the Tickets page in <code>/menu</code>, the same as the Discord panel.</li>
+<li><code>/ticket</code> shows your ticket, <code>/ticket &lt;text&gt;</code> adds to it, <code>/ticket close</code> closes it. One open ticket at a time, and a short wait before opening another.</li>
 </ul>
 </section>
 
@@ -635,6 +637,7 @@ tr:last-child td{border-bottom:0}
 </section>
 
 <section id="bosses"><h2>Bosses and special weapons</h2>
+<p><b>Attack heli:</b> the first player to damage it owns it, with their team, clan and anyone they invite with <code>/inviteheli</code>. Only that side can be targeted or hurt by it, and only they can hurt it. The lock clears when nobody from the side is online, or when the heli is destroyed. Grit is shared by damage, and the crates it drops are locked to that side.</p>
 <div class="tbl"><table><thead><tr><th>Boss</th><th>Where</th><th>Respawn</th></tr></thead><tbody>
 <tr><td>Tier 1: Rotting Brute</td><td>Mid-size monuments</td><td>About every 30 min ± 30 min</td></tr>
 <tr><td>Tier 2: Bloated Horror</td><td>Large monuments</td><td>About every hour ± 30 min</td></tr>
@@ -680,13 +683,14 @@ tr:last-child td{border-bottom:0}
 <tr><td><code>/grit</code> (<code>/skills</code>), <code>/grit me|top|forecast|journey</code></td><td>Skills tab; chat summary, Journey leaderboard, forecast, start a Journey</td></tr>
 <tr><td><code>/trades</code>, <code>/road</code>, <code>/hof</code></td><td>Trades, Road Markers, Hall of Fame</td></tr>
 <tr><td><code>/kit</code>, <code>/kit &lt;name&gt;</code>, <code>/kit list</code></td><td>Kits</td></tr>
-<tr><td><code>/bp</code>, <code>/unload</code></td><td>Backpack; unload fuel from a flamethrower or chainsaw</td></tr>
+<tr><td><code>/bp</code>, <code>/unload</code>, <code>/bpicon</code></td><td>Backpack; unload fuel from a flamethrower or chainsaw; show or hide the backpack button by the hotbar</td></tr>
 <tr><td><code>/sethome</code> <code>/home</code> <code>/delhome</code> <code>/homes</code></td><td>Homes</td></tr>
 <tr><td><code>/tpr</code> <code>/tpa</code> <code>/tpc</code> <code>/tpauto off|team|all</code></td><td>Teleport requests</td></tr>
 <tr><td><code>/town</code> (<code>/market</code>), <code>/outpost</code>, <code>/bandit</code></td><td>Teleport to Town, Outpost or Bandit Camp</td></tr>
 <tr><td><code>/clan ...</code>, <code>/c</code></td><td>Clans and clan chat</td></tr>
 <tr><td><code>/quests</code> (<code>/q</code>), <code>/tracker</code></td><td>Quests; hide or show the tracker</td></tr>
-<tr><td><code>/raids</code>, <code>/buyraid &lt;tier&gt; [treats]</code>, <code>/inviteraid &lt;player&gt;</code></td><td>Raid bases</td></tr>
+<tr><td><code>/raids</code>, <code>/buyraid &lt;tier&gt; [treats]</code>, <code>/inviteraid &lt;player&gt;</code>, <code>/uninviteraid &lt;player&gt;</code></td><td>Raid bases; add or remove a guest</td></tr>
+<tr><td><code>/inviteheli &lt;player&gt;</code>, <code>/uninviteheli &lt;player&gt;</code></td><td>Add or remove a guest on the attack heli you own</td></tr>
 <tr><td><code>/tcs</code>, <code>/abandoned</code></td><td>Your team's TCs; abandoned bases</td></tr>
 <tr><td><code>/island ...</code></td><td>Private islands</td></tr>
 <tr><td><code>/remove</code>, <code>/bgrade 0-4</code></td><td>Remove mode; auto-upgrade</td></tr>
@@ -707,7 +711,7 @@ tr:last-child td{border-bottom:0}
 <tr><td><code>/spawn &lt;vehicle&gt;</code>, <code>/recall [vehicle|all]</code></td><td>Bring your vehicle out near you, or put it away with its fuel and cargo</td></tr>
 <tr><td><code>/garage</code>, <code>/garage repair|allow|unallow &lt;name&gt;</code></td><td>Your vehicles; repair a destroyed one; let a friend drive</td></tr>
 <tr><td><code>/discord</code>, <code>/discord unlink</code></td><td>Link your Discord</td></tr>
-<tr><td><code>/ticket [type] &lt;text&gt;</code>, <code>/ticket close</code></td><td>Ask staff for help (<a href="#tickets">Tickets</a>)</td></tr>
+<tr><td><code>/ticket [type] &lt;text&gt;</code>, <code>/ticket close</code>, <code>/tickets</code></td><td>Ask staff for help (<a href="#tickets">Tickets</a>); <code>/tickets</code> opens the Tickets page in <code>/menu</code></td></tr>
 </tbody></table></div>
 </section>
 
