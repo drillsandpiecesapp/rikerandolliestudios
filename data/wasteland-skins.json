@@ -497,6 +497,36 @@
       "code": "PL",
       "id": "3820506370",
       "img": "https://images.steamusercontent.com/ugc/13432072691193159683/93F85C9C1BFC54078437C656B14993AD271B285A/"
+    },
+    {
+      "item": "Boonie Hat",
+      "short": "hat.boonie",
+      "name": "Fishing Hat (updated)",
+      "set": "admin",
+      "setName": "Admin",
+      "code": "A",
+      "id": "2558653957",
+      "img": "https://images.steamusercontent.com/ugc/1711915999684547319/164511BAC53DFE4184B67214D7480AAE62B0BB7D/"
+    },
+    {
+      "item": "Pants",
+      "short": "pants",
+      "name": "Fishing Pants (updated)",
+      "set": "admin",
+      "setName": "Admin",
+      "code": "A",
+      "id": "2558657371",
+      "img": "https://images.steamusercontent.com/ugc/1711915999684565209/41DC027067A29D407887740EB6563B1871BD7F4D/"
+    },
+    {
+      "item": "Tank Top",
+      "short": "shirt.tanktop",
+      "name": "Fisherman's net",
+      "set": "admin",
+      "setName": "Admin",
+      "code": "A",
+      "id": "896808660",
+      "img": "https://images.steamusercontent.com/ugc/155779454938086249/285695EFCA72B0BA3DACD92839A6E48EF04F141D/"
     }
   ]
 }
