@@ -29,6 +29,12 @@
       "name": "Pack Leader",
       "code": "PL",
       "who": "Pack Leader"
+    },
+    {
+      "key": "admin",
+      "name": "Admin",
+      "code": "A",
+      "who": "admin"
     }
   ],
   "skins": [
