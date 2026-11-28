@@ -521,6 +521,16 @@
     {
       "item": "Garage Door",
       "short": "wall.frame.garagedoor",
+      "name": "Garage Door | Polished obsidian",
+      "set": "admin",
+      "setName": "Admin",
+      "code": "A",
+      "id": "3188342587",
+      "img": "https://images.steamusercontent.com/ugc/2424697902440441605/3DF67D1843A1E4F5A41EA1C978DCCAC2BAF17A15/"
+    },
+    {
+      "item": "Garage Door",
+      "short": "wall.frame.garagedoor",
       "name": "Neon Brick Wall Blu",
       "set": "admin",
       "setName": "Admin",
