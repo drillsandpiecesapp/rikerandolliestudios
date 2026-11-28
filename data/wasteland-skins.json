@@ -509,6 +509,16 @@
       "img": "https://images.steamusercontent.com/ugc/1711915999684547319/164511BAC53DFE4184B67214D7480AAE62B0BB7D/"
     },
     {
+      "item": "Deployable, Wooden Door",
+      "short": "door.hinged.wood",
+      "name": "Swamp Door",
+      "set": "admin",
+      "setName": "Admin",
+      "code": "A",
+      "id": "810076261",
+      "img": "https://images.steamusercontent.com/ugc/102851052177019675/AAD65632E5699F412F11F41980513913EBDC816B/"
+    },
+    {
       "item": "Garage Door",
       "short": "wall.frame.garagedoor",
       "name": "Deadman's Dawn",
