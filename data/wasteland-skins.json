@@ -509,6 +509,16 @@
       "img": "https://images.steamusercontent.com/ugc/1711915999684547319/164511BAC53DFE4184B67214D7480AAE62B0BB7D/"
     },
     {
+      "item": "Garage Door",
+      "short": "wall.frame.garagedoor",
+      "name": "Deadman's Dawn",
+      "set": "admin",
+      "setName": "Admin",
+      "code": "A",
+      "id": "3836462681",
+      "img": "https://images.steamusercontent.com/ugc/10121206823491713231/812E0C614636F89B1C3F0ECDF51F97B80F274214/"
+    },
+    {
       "item": "Pants",
       "short": "pants",
       "name": "Fishing Pants (updated)",
