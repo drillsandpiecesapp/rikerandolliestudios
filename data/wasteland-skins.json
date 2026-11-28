@@ -519,6 +519,26 @@
       "img": "https://images.steamusercontent.com/ugc/10121206823491713231/812E0C614636F89B1C3F0ECDF51F97B80F274214/"
     },
     {
+      "item": "Garage Door",
+      "short": "wall.frame.garagedoor",
+      "name": "Starry Crescent | Garage Door (GLOW)",
+      "set": "admin",
+      "setName": "Admin",
+      "code": "A",
+      "id": "3772407944",
+      "img": "https://images.steamusercontent.com/ugc/10995037423691337826/7D2D9AD9630C3D6AFE9513F743C9B2FEA0D53D79/"
+    },
+    {
+      "item": "Garage Door",
+      "short": "wall.frame.garagedoor",
+      "name": "Witches Shelve",
+      "set": "admin",
+      "setName": "Admin",
+      "code": "A",
+      "id": "3338752807",
+      "img": "https://images.steamusercontent.com/ugc/2443855692529664159/B92911A69D2B4E7EF7D102E0C9B46A6090CC4CDB/"
+    },
+    {
       "item": "Pants",
       "short": "pants",
       "name": "Fishing Pants (updated)",
