@@ -521,6 +521,26 @@
     {
       "item": "Garage Door",
       "short": "wall.frame.garagedoor",
+      "name": "Neon Brick Wall Blu",
+      "set": "admin",
+      "setName": "Admin",
+      "code": "A",
+      "id": "2848886116",
+      "img": "https://images.steamusercontent.com/ugc/1743475661721164995/28891BD19367020B96C16F26858EBDF8517E3F90/"
+    },
+    {
+      "item": "Garage Door",
+      "short": "wall.frame.garagedoor",
+      "name": "Opalite Garage Door",
+      "set": "admin",
+      "setName": "Admin",
+      "code": "A",
+      "id": "3840583416",
+      "img": "https://images.steamusercontent.com/ugc/11006859363703161760/71AF17722E2B95AE471540C74DD42F9976F3FD8D/"
+    },
+    {
+      "item": "Garage Door",
+      "short": "wall.frame.garagedoor",
       "name": "Starry Crescent | Garage Door (GLOW)",
       "set": "admin",
       "setName": "Admin",
